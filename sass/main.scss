@@ -72,7 +72,7 @@ h3 {
 h1,
 h2 {
   font-size: $font-size-extra-large;
-  margin: 0 auto $heading-spacing-large;
+  margin: 0 auto var(--heading-spacing);
 }
 
 //********** Containers **********
@@ -91,9 +91,9 @@ main {
 }
 
 section {
-  @include section-end-spacing;
   // Push sections over due to menu trigger bar
   margin-left: 100px;
+  padding-bottom: var(--vertical-section-spacing);
 }
 
 //********** Paragraphs **********

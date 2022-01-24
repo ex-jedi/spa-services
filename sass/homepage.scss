@@ -54,7 +54,7 @@
 
 .homepage-services-flex-wrapper {
   @include flex(row);
-  @include section-end-spacing;
+  padding-bottom: var(--vertical-section-spacing);
 }
 
 .homepage-services-link-section-image {
@@ -86,8 +86,8 @@
 }
 
 .services-find-out-more-paragraph {
-  @include section-end-spacing;
   width: 50%;
+  padding-bottom: var(--vertical-section-spacing);
 }
 
 //*=========================================
@@ -256,5 +256,10 @@
 }
 
 //*=========================================
-//** Mixins **
+//** Testimonials **
 //*=========================================
+
+.homepage-testimonials-section {
+  background-color: $background-colour-three;
+  color: $font-colour-light;
+}

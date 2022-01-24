@@ -3,6 +3,56 @@
 //*==============================================================================
 
 //*=========================================
+//** Media Queries   **
+//*=========================================
+
+//TODO: Delete unused media queries
+
+//********** Max Width **********
+
+@mixin breakpoint($point) {
+  @if unitless($point) {
+    $point: 1px * $point;
+  }
+  @media (max-width: $point) {
+    @content;
+  }
+}
+
+//********** Min Width **********
+
+@mixin min-breakpoint($point) {
+  @if unitless($point) {
+    $point: 1px * $point;
+  }
+  @media (min-width: $point) {
+    @content;
+  }
+}
+
+//********** Height **********
+
+@mixin height-breakpoint($point) {
+  @if unitless($point) {
+    $point: 1px * $point;
+  }
+  @media (max-height: $point) {
+    @content;
+  }
+}
+
+//********** Width and Orientation **********
+
+@mixin width-orientation-breakpoint($point, $orientation: portrait) {
+  @if unitless($point) {
+    $point: 1px * $point;
+  }
+  @media (max-height: $point) and (orientation: $orientation) {
+    @content;
+  }
+}
+
+//*=========================================
 //** Layout **
 //*=========================================
 
@@ -46,6 +96,7 @@ $heading-spacing-medium: 15rem;
 $heading-spacing-small: 10rem;
 
 //* Sections
+$section-spacing-super-large: 50rem;
 $section-spacing-large: 20rem;
 $section-spacing-medium: 15rem;
 $section-spacing-small: 10rem;
@@ -66,6 +117,23 @@ $paragraph-spacing-small: 1.25rem;
 
 //********** Vertical and horizontal spacing **********
 
+:root {
+  // Sections
+  --vertical-section-spacing: #{$section-spacing-large};
+  --horizontal-section-spacing: #{$section-spacing-super-large};
+
+  // Headings
+  --heading-spacing: #{$heading-spacing-large};
+
+  @include breakpoint(1500) {
+    --vertical-spacing: #{$section-spacing-medium};
+  }
+
+  @include breakpoint(700) {
+    --vertical-spacing: #{$section-spacing-small};
+  }
+}
+
 @mixin section-end-spacing {
   padding-block-end: $section-spacing-large;
 
@@ -79,10 +147,10 @@ $paragraph-spacing-small: 1.25rem;
 }
 
 @mixin horizontal-spacing {
-  padding-inline: $section-spacing-large;
+  padding-inline: $section-spacing-super-large;
 
   @include breakpoint(1300) {
-    padding-inline: $section-spacing-medium;
+    padding-inline: $section-spacing-large;
   }
 
   @include breakpoint(700) {
@@ -151,56 +219,6 @@ $link-visited: #8608fb;
 }
 
 //********** Keyframes **********
-
-//*=========================================
-//** Media Queries   **
-//*=========================================
-
-//TODO: Delete unused media queries
-
-//********** Max Width **********
-
-@mixin breakpoint($point) {
-  @if unitless($point) {
-    $point: 1px * $point;
-  }
-  @media (max-width: $point) {
-    @content;
-  }
-}
-
-//********** Min Width **********
-
-@mixin min-breakpoint($point) {
-  @if unitless($point) {
-    $point: 1px * $point;
-  }
-  @media (min-width: $point) {
-    @content;
-  }
-}
-
-//********** Height **********
-
-@mixin height-breakpoint($point) {
-  @if unitless($point) {
-    $point: 1px * $point;
-  }
-  @media (max-height: $point) {
-    @content;
-  }
-}
-
-//********** Width and Orientation **********
-
-@mixin width-orientation-breakpoint($point, $orientation: portrait) {
-  @if unitless($point) {
-    $point: 1px * $point;
-  }
-  @media (max-height: $point) and (orientation: $orientation) {
-    @content;
-  }
-}
 
 //*=========================================
 //** Accessability **
