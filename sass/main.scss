@@ -242,6 +242,39 @@ input {
   border-right: 0;
   border-left: 0;
   border-bottom: 3px solid $font-colour-dark;
+  font-size: $font-size-medium;
+}
+
+.text-area-input-wrapper {
+  align-items: flex-start;
+}
+
+.text-area-input {
+  margin-top: -1px;
+  color: $font-colour-dark;
+  width: 100%;
+  background-color: $background-colour-two;
+  border: 0;
+  font-size: $font-size-medium;
+  resize: none;
+
+  // Underline
+  background-attachment: local;
+  line-height: $font-size-large;
+  background-image: linear-gradient(
+    transparent,
+    transparent calc(#{$font-size-large} - 3px),
+    $font-colour-dark calc(#{$font-size-large} - 3px)
+  );
+  background-size: $font-size-large $font-size-large;
+
+  // Scroll bar
+  @include styled-scrollbar(
+    $font-size-extra-small,
+    $background-colour-dark,
+    $background-colour-two,
+    $background-colour-two
+  );
 }
 
 //********** Honeypot **********
