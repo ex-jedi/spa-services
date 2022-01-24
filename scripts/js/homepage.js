@@ -2,7 +2,7 @@
 // ** Imports  **
 // *==============================================================================
 
-// TODO: Remove GSAP imports
+// TODO: Minify
 import * as Flickity from 'flickity';
 import 'flickity-imagesloaded';
 
@@ -11,10 +11,10 @@ import 'flickity-imagesloaded';
 // *==============================================================================
 
 // ********** Flickity **********
-const carousel = document.querySelector('.main-carousel');
+const carousel = document.querySelector('.homepage-gallery');
 const flkty = new Flickity(carousel, {
   imagesLoaded: true,
-  autoPlay: 10000,
+  autoPlay: 1000,
   prevNextButtons: false,
   wrapAround: true,
   selectedAttraction: 0.006,
@@ -24,5 +24,3 @@ const flkty = new Flickity(carousel, {
 // *==============================================================================
 // ** Imported  **
 // *==============================================================================
-
-console.log('Hello');

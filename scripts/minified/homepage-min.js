@@ -4261,7 +4261,7 @@ __webpack_require__.r(__webpack_exports__);
 // ** Imports  **
 // *==============================================================================
 
-// TODO: Remove GSAP imports
+// TODO: Minify
 
 
 
@@ -4270,10 +4270,10 @@ __webpack_require__.r(__webpack_exports__);
 // *==============================================================================
 
 // ********** Flickity **********
-const carousel = document.querySelector('.main-carousel');
+const carousel = document.querySelector('.homepage-gallery');
 const flkty = new flickity__WEBPACK_IMPORTED_MODULE_0__(carousel, {
   imagesLoaded: true,
-  autoPlay: 10000,
+  autoPlay: 1000,
   prevNextButtons: false,
   wrapAround: true,
   selectedAttraction: 0.006,
@@ -4283,8 +4283,6 @@ const flkty = new flickity__WEBPACK_IMPORTED_MODULE_0__(carousel, {
 // *==============================================================================
 // ** Imported  **
 // *==============================================================================
-
-console.log('Hello');
 
 
 }();

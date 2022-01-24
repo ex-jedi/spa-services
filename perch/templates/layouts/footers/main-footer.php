@@ -13,5 +13,6 @@
 			Web design & development, brand design & illustration by <a href="" class="promo-link">phoenix & phoenix</a>
 		</p>
 </footer>
+
 </div> <!-- wrapper div -->
 <!-- end js files  -->
