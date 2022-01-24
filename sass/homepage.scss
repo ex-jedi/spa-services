@@ -26,6 +26,20 @@
 
 .header-content-flex-wrapper {
   @include flex(row);
+  margin: 0 $header-spacing-large;
+}
+
+.homepage-header-image {
+  flex: 0 1 auto;
+  width: 50%;
+  height: 100%;
+  margin-right: $header-spacing-large;
+  object-fit: cover;
+}
+
+.header-text-area {
+  flex: 0 1 auto;
+  width: 50%;
 }
 
 //*=========================================

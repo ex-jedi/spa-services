@@ -95,6 +95,10 @@ main {
 p {
   margin-inline: auto;
   margin-top: 0;
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
 }
 
 .main-body-font {
@@ -126,8 +130,11 @@ a {
 //*=========================================
 //** Header **
 //*=========================================
+
 .main-header {
+  margin-top: 10px;
   background-color: $background-colour-one;
+  padding-bottom: 200px;
 }
 
 //********** Main Logo **********
