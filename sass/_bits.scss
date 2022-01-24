@@ -134,30 +134,6 @@ $paragraph-spacing-small: 1.25rem;
   }
 }
 
-@mixin section-end-spacing {
-  padding-block-end: $section-spacing-large;
-
-  @include breakpoint(1300) {
-    padding-block-end: $section-spacing-medium;
-  }
-
-  @include breakpoint(700) {
-    padding-block-end: $section-spacing-small;
-  }
-}
-
-@mixin horizontal-spacing {
-  padding-inline: $section-spacing-super-large;
-
-  @include breakpoint(1300) {
-    padding-inline: $section-spacing-large;
-  }
-
-  @include breakpoint(700) {
-    padding-inline: $section-spacing-small;
-  }
-}
-
 //*=========================================
 //** Colours  **
 //*=========================================

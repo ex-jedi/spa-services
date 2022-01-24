@@ -93,7 +93,7 @@ main {
 section {
   // Push sections over due to menu trigger bar
   margin-left: 100px;
-  padding-bottom: var(--vertical-section-spacing);
+  padding-block: var(--vertical-section-spacing);
 }
 
 //********** Paragraphs **********
@@ -140,7 +140,7 @@ a {
 .main-header {
   margin-top: 10px;
   background-color: $background-colour-one;
-  padding-bottom: 200px;
+  // padding-bottom: 200px;
 }
 
 //********** Main Logo **********
