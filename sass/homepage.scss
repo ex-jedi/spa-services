@@ -43,5 +43,42 @@
 }
 
 //*=========================================
+//** Services Link Section **
+//*=========================================
+
+.services-link-section {
+  @include flex(row);
+  background-color: $background-colour-one;
+}
+
+.homepage-services-link-section-image {
+  flex: 0 1 auto;
+  width: 50%;
+  height: 100%;
+}
+
+.services-link-text-wrapper {
+  @include flex(column);
+  justify-content: center;
+  align-items: center;
+  flex: 0 1 auto;
+  width: 50%;
+  height: auto;
+  background-color: $background-colour-three;
+}
+
+.homepage-services-link-text {
+  font-size: $font-size-large;
+  color: $font-colour-light;
+  margin: 0 auto;
+  width: 40%;
+}
+
+.homepage-services-link {
+  color: $font-colour-light;
+  margin: 0 auto;
+}
+
+//*=========================================
 //** Mixins **
 //*=========================================
