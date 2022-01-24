@@ -47,8 +47,14 @@
 //*=========================================
 
 .services-link-section {
-  @include flex(row);
+  @include flex(column);
   background-color: $background-colour-one;
+  padding-bottom: 0;
+}
+
+.homepage-services-flex-wrapper {
+  @include flex(row);
+  @include section-end-spacing;
 }
 
 .homepage-services-link-section-image {
@@ -77,6 +83,11 @@
 .homepage-services-link {
   color: $font-colour-light;
   margin: 0 auto;
+}
+
+.services-find-out-more-paragraph {
+  @include section-end-spacing;
+  width: 50%;
 }
 
 //*=========================================

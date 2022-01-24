@@ -1,16 +1,21 @@
 <section class="services-link-section">
- <img class="homepage-services-link-section-image" itemprop="image" loading="lazy" src="<perch:content id="servicesLinkImage" type="image" width="1800" label="Servces Link image">" alt="<perch:content id="altOne" type="text" label="Image Description">"
- sizes="(max-width: 1500px) 100vw, 50vw"
- srcset="<perch:content type="image" id="servicesLinkImage" width="1800"> 1800w,
- <perch:content type="image" id="servicesLinkImage" width="1400"> 1400w,
- <perch:content type="image" id="servicesLinkImage" width="1000"> 1000w,
- <perch:content type="image" id="servicesLinkImage" width="600"> 600w,
- <perch:content type="image" id="servicesLinkImage" width="300"> 300w">
- <div class="services-link-text-wrapper">
-   <h2 class="homepage-services-link-text">
-     <a href="/services" class="homepage-services-link">
-       <perch:content id="servicesLinkText" type="text" label="Homepage Services Link Text" required>
-     </a>
-   </h2>
-  </div>
+ <div class="homepage-services-flex-wrapper">
+   <img class="homepage-services-link-section-image" itemprop="image" loading="lazy" src="<perch:content id="servicesLinkImage" type="image" width="1800" label="Servces Link image">" alt="<perch:content id="altOne" type="text" label="Image Description">"
+   sizes="(max-width: 1500px) 100vw, 50vw"
+   srcset="<perch:content type="image" id="servicesLinkImage" width="1800"> 1800w,
+   <perch:content type="image" id="servicesLinkImage" width="1400"> 1400w,
+   <perch:content type="image" id="servicesLinkImage" width="1000"> 1000w,
+   <perch:content type="image" id="servicesLinkImage" width="600"> 600w,
+   <perch:content type="image" id="servicesLinkImage" width="300"> 300w">
+   <div class="services-link-text-wrapper">
+     <h2 class="homepage-services-link-text">
+       <a href="/services" class="homepage-services-link">
+         <perch:content id="servicesLinkText" type="text" label="Homepage Services Link Text" required>
+       </a>
+     </h2>
+    </div>
+ </div>
+ <p class="services-find-out-more-paragraph main-body-font">
+   <perch:content id="servicesLinkTextarea" type="textarea" size="s" label="Services Section Additional Text" required>
+ </p>
 </section>
