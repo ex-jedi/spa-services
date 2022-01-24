@@ -112,12 +112,54 @@ a {
 //*=========================================
 //** Header **
 //*=========================================
+.main-header {
+  background-color: $background-colour-one;
+}
+
+//********** Main Logo **********
+.main-logo-wrapper {
+  width: 155px;
+  height: auto;
+  margin: 0 auto;
+}
 
 // *=========================================
 // ** Main Nav  **
 // *=========================================
 
 .main-nav-trigger-wrapper {
+  @include flex(row);
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: $background-colour-two;
+  height: 100vh;
+  width: auto;
+  z-index: 4;
+}
+
+.main-nav-trigger {
+  border: none;
+  appearance: none;
+  background-color: transparent;
+  cursor: pointer;
+  padding: 25px;
+  width: fit-content;
+  height: fit-content;
+}
+
+.sideways-text {
+  transform: rotate(180deg);
+  writing-mode: vertical-rl;
+  text-orientation: sideways;
+  font-size: $font-size-medium;
+  color: $font-colour-dark;
+  font-weight: 700;
+}
+
+.main-nav {
   display: none;
 }
 
@@ -176,7 +218,7 @@ select {
 .show-on-focus {
   position: absolute;
   color: $font-colour-dark;
-  background-color: $light-background-colour;
+  background-color: $background-colour-light;
   padding: 10px;
   //TODO: Add font size variable
   font-size: 30px;

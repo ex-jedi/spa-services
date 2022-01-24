@@ -32,7 +32,8 @@
 //********** Sizing & spacing **********
 
 //* Header
-$header-spacing: 5rem;
+$header-spacing-small: 5rem;
+$header-spacing-medium: 7.5rem;
 $header-spacing-large: 10rem;
 
 //* Headings
@@ -44,16 +45,47 @@ $heading-size-large: 10rem;
 $heading-spacing-large: 5rem;
 
 //* Sections
-$section-spacing-extra-large: 40rem;
-$section-spacing-large: 30rem;
+$section-spacing-large: 20rem;
+$section-spacing-medium: 15rem;
+$section-spacing-small: 15rem;
 
 //* Paragraphs
 
 // Font sizing
-$font-size-large: 10rem;
+$font-size-extra-large: 7.5rem;
+$font-size-large: 5rem;
+$font-size-medium: 3.8rem;
+$font-size-small: 2.5rem;
+$font-size-extra-small: 1.6rem;
 
 // Spacing
 $paragraph-spacing-large: 10rem;
+
+//********** Vertical and horizontal spacing **********
+
+@mixin vertical-spacing {
+  margin-block: $section-spacing-large;
+
+  @include breakpoint(1300) {
+    margin-block: $section-spacing-medium;
+  }
+
+  @include breakpoint(700) {
+    margin-block: $section-spacing-small;
+  }
+}
+
+@mixin horizontal-spacing {
+  margin-inline: $section-spacing-large;
+
+  @include breakpoint(1300) {
+    margin-inline: $section-spacing-medium;
+  }
+
+  @include breakpoint(700) {
+    margin-inline: $section-spacing-small;
+  }
+}
 
 //*=========================================
 //** Colours  **
@@ -62,12 +94,15 @@ $paragraph-spacing-large: 10rem;
 //TODO: Customise brand colours
 
 // Main brand Colours
-$light-background-colour: #f4f1f0;
-$dark-background-colour: #3f3f3f;
+$background-colour-light: #eef7f3;
+$background-colour-dark: #144884;
+$background-colour-one: #eef7f3;
+$background-colour-two: #bbe0ce;
+$background-colour-three: #144884;
 
 // Main Font Colours
-$font-colour-light: #f4f1f0;
-$font-colour-dark: #252525;
+$font-colour-light: #eef7f3;
+$font-colour-dark: #144884;
 
 // Link Colours
 $link-colour: #3c3cf6;

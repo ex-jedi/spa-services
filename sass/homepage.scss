@@ -9,19 +9,9 @@
 @use 'bits' as *; //Contains variables, media queries mixins etc.
 
 //*=========================================
-//** Mixins **
+//** Header **
 //*=========================================
 
-//********** Bottom spacing **********
-
-@mixin bottom-spacing {
-  margin-bottom: $section-spacing-large;
-
-  @include breakpoint(1300) {
-    margin-bottom: $section-spacing-medium;
-  }
-
-  @include breakpoint(700) {
-    margin-bottom: $section-spacing-small;
-  }
-}
+//*=========================================
+//** Mixins **
+//*=========================================
