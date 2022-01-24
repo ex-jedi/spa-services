@@ -200,13 +200,43 @@ a {
 // ** Forms  **
 // *=========================================
 
+.main-contact-form-section {
+  padding-inline: var(--horizontal-section-spacing);
+  background-color: $background-colour-two;
+  color: $font-colour-dark;
+  @include flex(column);
+  justify-content: center;
+  align-items: center;
+}
+
 //* Inherit fonts for inputs and buttons
 input,
 button,
-textarea,
-select {
+textarea {
   font: inherit;
   color: inherit;
+}
+
+.main-contact-form-input-wrapper {
+  @include flex(row);
+  justify-content: flex-start;
+  align-items: flex-end;
+  margin-bottom: $section-spacing-small;
+}
+
+label {
+  @include heading-font-stack;
+  font-size: $font-size-medium;
+  font-weight: 700;
+  margin-right: 10px;
+}
+
+input {
+  background-color: $background-colour-two;
+  border-top: 0;
+  border-right: 0;
+  border-left: 0;
+  border-bottom: 3px solid $font-colour-dark;
 }
 
 //********** Honeypot **********
