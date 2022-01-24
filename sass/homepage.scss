@@ -12,6 +12,22 @@
 //** Header **
 //*=========================================
 
+.header-content {
+  padding: $header-spacing-large $header-spacing-large 0;
+}
+
+.homepage-header-main-heading {
+  color: $font-colour-dark;
+  font-size: $font-size-large;
+  width: 100%;
+  max-width: 1000px;
+  margin-bottom: $header-spacing-large;
+}
+
+.header-content-flex-wrapper {
+  @include flex(row);
+}
+
 //*=========================================
 //** Mixins **
 //*=========================================

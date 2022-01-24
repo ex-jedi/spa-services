@@ -62,8 +62,17 @@ body {
 
 //********** Headings**********
 h1,
-h2 {
+h2,
+h3 {
   @include heading-font-stack;
+  font-weight: 700;
+  text-align: center;
+}
+
+h1,
+h2 {
+  font-size: $font-size-extra-large;
+  margin: 0 auto $heading-spacing-large;
 }
 
 //********** Containers **********
@@ -86,6 +95,11 @@ main {
 p {
   margin-inline: auto;
   margin-top: 0;
+}
+
+.main-body-font {
+  font-size: $font-size-medium;
+  font-weight: 400;
 }
 
 // *=========================================
@@ -136,7 +150,7 @@ a {
   left: 0;
   background-color: $background-colour-two;
   height: 100vh;
-  width: auto;
+  width: 100px;
   z-index: 4;
 }
 
