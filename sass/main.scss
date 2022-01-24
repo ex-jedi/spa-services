@@ -62,6 +62,7 @@ body {
   max-width: 1920px;
   overflow-x: hidden;
   @include main-font-stack;
+  background-color: $background-colour-light;
 }
 
 // *=========================================
