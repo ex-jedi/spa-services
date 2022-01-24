@@ -3,6 +3,7 @@
 <?php perch_layout('headers/homepage-header'); ?>
 <main class="main-content homepage-main-content" id="main-content">
 	  <?php perch_content('Homepage Services Link Section'); ?>
+		<?php perch_content("Homepage Gallery"); ?>
 </main>
 <?php perch_layout('footers/main-footer'); ?>
 <?php perch_layout('footer-ends/main-footer-end'); ?>
