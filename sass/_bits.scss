@@ -64,27 +64,27 @@ $paragraph-spacing-large: 10rem;
 
 //********** Vertical and horizontal spacing **********
 
-@mixin vertical-spacing {
-  margin-block: $section-spacing-large;
+@mixin section-end-spacing {
+  padding-block-end: $section-spacing-large;
 
   @include breakpoint(1300) {
-    margin-block: $section-spacing-medium;
+    padding-block-end: $section-spacing-medium;
   }
 
   @include breakpoint(700) {
-    margin-block: $section-spacing-small;
+    padding-block-end: $section-spacing-small;
   }
 }
 
 @mixin horizontal-spacing {
-  margin-inline: $section-spacing-large;
+  padding-inline: $section-spacing-large;
 
   @include breakpoint(1300) {
-    margin-inline: $section-spacing-medium;
+    padding-inline: $section-spacing-medium;
   }
 
   @include breakpoint(700) {
-    margin-inline: $section-spacing-small;
+    padding-inline: $section-spacing-small;
   }
 }
 
