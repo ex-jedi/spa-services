@@ -4,6 +4,7 @@
 <main class="main-content homepage-main-content" id="main-content">
 	  <?php perch_content('Homepage Services Link Section'); ?>
 		<?php perch_content("Homepage Gallery"); ?>
+		<?php perch_content("Homepage Testimonials"); ?>
 </main>
 <?php perch_layout('footers/main-footer'); ?>
 <?php perch_layout('footer-ends/homepage-footer-end'); ?>
