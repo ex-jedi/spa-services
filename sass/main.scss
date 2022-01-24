@@ -53,6 +53,7 @@ body {
   min-width: 320px;
   max-width: 1920px;
   overflow-x: hidden;
+  @include main-font-stack;
 }
 
 // *=========================================
@@ -60,6 +61,10 @@ body {
 // *=========================================
 
 //********** Headings**********
+h1,
+h2 {
+  @include heading-font-stack;
+}
 
 //********** Containers **********
 

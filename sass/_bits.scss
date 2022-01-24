@@ -23,6 +23,12 @@
   font-style: normal;
 }
 
+@mixin heading-font-stack {
+  font-family: roboto, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
 //********** Sizing & spacing **********
 
 //* Header
