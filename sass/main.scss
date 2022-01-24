@@ -209,6 +209,10 @@ a {
   align-items: center;
 }
 
+.main-contact-form {
+  width: 100%;
+}
+
 //* Inherit fonts for inputs and buttons
 input,
 button,
@@ -232,6 +236,7 @@ label {
 }
 
 input {
+  flex: 1 1 auto;
   background-color: $background-colour-two;
   border-top: 0;
   border-right: 0;
