@@ -334,6 +334,14 @@ input {
   p {
     margin-bottom: $paragraph-spacing-small;
   }
+
+  div {
+    text-align: center;
+
+    &:not(:last-of-type) {
+      margin-bottom: $section-spacing-small;
+    }
+  }
 }
 
 //*=========================================
