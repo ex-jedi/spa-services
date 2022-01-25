@@ -103,6 +103,14 @@
   color: $font-colour-light;
   margin: 0 auto;
   width: 40%;
+
+  @include breakpoint(1600) {
+    font-size: $font-size-medium;
+  }
+
+  @include breakpoint(1100) {
+    font-size: $font-size-small;
+  }
 }
 
 .homepage-services-link {
