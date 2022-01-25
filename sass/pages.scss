@@ -17,7 +17,58 @@
   color: $font-colour-dark;
 }
 
+.pages-header-main-heading {
+  margin-bottom: 0;
+}
+
 .pages-header-subtitle {
   font-size: $font-size-medium;
-  margin-bottom: 0;
+  margin: var(--vertical-section-spacing) 0 0;
+}
+
+//*=========================================
+//** Page  **
+//*=========================================
+
+.pages-content-wrapper {
+  padding: var(--vertical-section-spacing) $section-spacing-super-large;
+  background-color: $background-colour-one;
+}
+
+.pages-block-wrapper {
+  padding-bottom: var(--vertical-section-spacing);
+  color: $font-colour-dark;
+
+  &:nth-child(odd) {
+    img {
+      box-shadow: 50px 50px $background-colour-two;
+    }
+  }
+
+  &:nth-child(even) {
+    img {
+      box-shadow: 50px 50px $background-colour-three;
+    }
+  }
+
+  &:last-of-type {
+    padding-bottom: 0;
+  }
+}
+
+.block-textwrapper {
+  margin-bottom: $section-spacing-small;
+}
+
+.pages-subtitle {
+  text-align: left;
+  margin-bottom: $section-spacing-small;
+}
+
+.pages-block-image {
+  width: auto;
+  max-height: 98vh;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  margin: 0 auto;
 }
