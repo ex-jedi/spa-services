@@ -340,8 +340,8 @@ input {
   }
 
   div {
-    text-align: center;
-
+    @include flex(column);
+    align-items: center;
     &:not(:last-of-type) {
       margin-bottom: $section-spacing-small;
     }
