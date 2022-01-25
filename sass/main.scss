@@ -81,7 +81,7 @@ h3 {
 h1,
 h2 {
   font-size: $font-size-extra-large;
-  margin: 0 auto var(--heading-spacing);
+  margin: 0 auto $section-spacing-large;
 }
 
 //********** Containers **********
@@ -106,7 +106,7 @@ main {
 section {
   // Push sections over due to menu trigger bar
   margin-left: 100px;
-  padding-block: var(--vertical-section-spacing);
+  padding-block: $section-spacing-large;
 }
 
 //********** Paragraphs **********
@@ -254,7 +254,7 @@ a {
 // *=========================================
 
 .main-contact-form-section {
-  padding-inline: var(--horizontal-section-spacing);
+  padding-inline: $section-spacing-super-large;
   background-color: $background-colour-two;
   color: $font-colour-dark;
 }
@@ -367,7 +367,7 @@ input {
   color: $font-colour-light;
   font-size: $font-size-small;
   font-weight: 400;
-  padding: var(--vertical-section-spacing) var(--horizontal-section-spacing);
+  padding: $section-spacing-large $section-spacing-super-large;
   margin: 0 0 0 100px;
 
   a {

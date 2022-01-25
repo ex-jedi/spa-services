@@ -79,7 +79,7 @@
 
 .homepage-services-flex-wrapper {
   @include flex(row);
-  padding-bottom: var(--vertical-section-spacing);
+  padding-bottom: $section-spacing-large;
 }
 
 .homepage-services-link-section-image {
@@ -120,7 +120,7 @@
 
 .services-find-out-more-paragraph {
   width: 50%;
-  padding-bottom: var(--vertical-section-spacing);
+  padding-bottom: $section-spacing-large;
 
   @include breakpoint(1300) {
     width: 75%;
@@ -300,5 +300,5 @@
 .homepage-testimonials-section {
   background-color: $background-colour-three;
   color: $font-colour-light;
-  padding-inline: var(--horizontal-section-spacing);
+  padding-inline: $section-spacing-large;
 }

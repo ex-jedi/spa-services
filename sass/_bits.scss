@@ -116,26 +116,6 @@ $paragraph-spacing-large: 5rem;
 $paragraph-spacing-medium: 2.5rem;
 $paragraph-spacing-small: 1.25rem;
 
-//********** Vertical and horizontal spacing **********
-
-:root {
-  // Sections
-  --vertical-section-spacing: #{$section-spacing-large};
-  --horizontal-section-spacing: #{$section-spacing-super-large};
-
-  // Headings
-  --heading-spacing: #{$heading-spacing-large};
-
-  @include breakpoint(1600) {
-    --horizontal-section-spacing: #{$section-spacing-large};
-    --vertical-spacing: #{$section-spacing-medium};
-  }
-
-  @include breakpoint(700) {
-    --vertical-spacing: #{$section-spacing-small};
-  }
-}
-
 //*=========================================
 //** Colours  **
 //*=========================================
