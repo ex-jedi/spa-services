@@ -10,4 +10,4 @@ perch/addons/apps/perch_blog/import_data/
 perch/config/config.php
 perch/addons/apps/jw_activity_log/lang/en-gb.txt
 #Uncomment below for public repos
-#perch/core
+perch/core/lang/en-gb.txt

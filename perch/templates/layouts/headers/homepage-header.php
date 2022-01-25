@@ -4,17 +4,10 @@
 <!-- Cookie Warning -->
 <?php perch_content("Cookie Warning"); ?>
 	<div class="site-wrapper" itemscope itemtype="http://schema.org/LocalBusiness">
-  <?php perch_content("SVG Tree"); ?>
-		<header class="header main-header">
+		<header class="header main-header homepage-header">
 			<!-- Skip to main content link  -->
 			<a class="show-on-focus"  href="#main-content">Skip to main content</a>
-			<!-- For SVG logo. Delete if not needed -->
-			<?php perch_content("Hidden Logo"); ?>
-			<div class="main-logo-wrapper">
-				<a class="main-logo-link"  href="/">
-				<?php perch_content("Main Logo"); ?>
-			</a>
-			</div>
+			<?php perch_content("Main Logo"); ?>
 			<?php perch_pages_navigation(array(
 			'hide-extensions' => true,
 			'levels'    => 1

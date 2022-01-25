@@ -7,7 +7,7 @@
 	<?php $page_css_file	=  perch_page_attribute('css', array('template' => 'attribute_files/bits.html'), true); ?>
 	<link rel="stylesheet" href="<?php echo $page_css_file ?>?v=<?= filemtime($_SERVER['DOCUMENT_ROOT'].$page_css_file);?>">
 	<!-- Typekit -->
-	<!-- TODO: Typekit link goes here. Delete/change as needed.  -->
+	<link rel="stylesheet" href="https://use.typekit.net/efx5qnf.css">
 	<!-- Perch Meta -->
 	<?php
 	$domain = 'https://'.$_SERVER["HTTP_HOST"];

@@ -38,6 +38,14 @@ html {
   font-size: 10px;
   overflow-x: hidden;
   scroll-behavior: smooth;
+
+  // Scroll bar
+  @include styled-scrollbar(
+    $font-size-extra-small,
+    $background-colour-three,
+    $background-colour-light,
+    $background-colour-light
+  );
 }
 
 // * Box sizing rules
@@ -53,6 +61,8 @@ body {
   min-width: 320px;
   max-width: 1920px;
   overflow-x: hidden;
+  @include main-font-stack;
+  background-color: $background-colour-light;
 }
 
 // *=========================================
@@ -60,6 +70,19 @@ body {
 // *=========================================
 
 //********** Headings**********
+h1,
+h2,
+h3 {
+  @include heading-font-stack;
+  font-weight: 700;
+  text-align: center;
+}
+
+h1,
+h2 {
+  font-size: $font-size-extra-large;
+  margin: 0 auto var(--heading-spacing);
+}
 
 //********** Containers **********
 
@@ -76,11 +99,26 @@ main {
   -webkit-transform: translate3d(0, 0, 0);
 }
 
+section {
+  // Push sections over due to menu trigger bar
+  margin-left: 100px;
+  padding-block: var(--vertical-section-spacing);
+}
+
 //********** Paragraphs **********
 
 p {
   margin-inline: auto;
   margin-top: 0;
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+}
+
+.main-body-font {
+  font-size: $font-size-medium;
+  font-weight: 400;
 }
 
 // *=========================================
@@ -108,11 +146,57 @@ a {
 //** Header **
 //*=========================================
 
+.main-header {
+  margin-top: 10px;
+  background-color: $background-colour-one;
+  // padding-bottom: 200px;
+}
+
+//********** Main Logo **********
+.main-logo-wrapper {
+  width: 155px;
+  height: auto;
+  margin: 0 auto;
+}
+
 // *=========================================
 // ** Main Nav  **
 // *=========================================
 
 .main-nav-trigger-wrapper {
+  @include flex(row);
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: $background-colour-two;
+  height: 100vh;
+  width: 100px;
+  z-index: 4;
+  border-right: 3px solid $font-colour-light;
+}
+
+.main-nav-trigger {
+  border: none;
+  appearance: none;
+  background-color: transparent;
+  cursor: pointer;
+  padding: 25px;
+  width: fit-content;
+  height: fit-content;
+}
+
+.sideways-text {
+  transform: rotate(180deg);
+  writing-mode: vertical-rl;
+  text-orientation: sideways;
+  font-size: $font-size-medium;
+  color: $font-colour-dark;
+  font-weight: 700;
+}
+
+.main-nav {
   display: none;
 }
 
@@ -126,13 +210,95 @@ a {
 // ** Forms  **
 // *=========================================
 
+.main-contact-form-section {
+  padding-inline: var(--horizontal-section-spacing);
+  background-color: $background-colour-two;
+  color: $font-colour-dark;
+}
+
+.main-contact-form {
+  @include flex(column);
+  width: 100%;
+  @include heading-font-stack;
+}
+
 //* Inherit fonts for inputs and buttons
 input,
 button,
-textarea,
-select {
+textarea {
   font: inherit;
   color: inherit;
+}
+
+.main-contact-form-input-wrapper {
+  @include flex(row);
+  justify-content: flex-start;
+  align-items: flex-end;
+  margin-bottom: $section-spacing-small;
+}
+
+label {
+  font-size: $font-size-medium;
+  font-weight: 700;
+  margin-right: 10px;
+}
+
+input {
+  flex: 1 1 auto;
+  background-color: $background-colour-two;
+  border-top: 0;
+  border-right: 0;
+  border-left: 0;
+  border-bottom: 3px solid $font-colour-dark;
+  font-size: $font-size-medium;
+}
+
+.text-area-input-wrapper {
+  align-items: flex-start;
+}
+
+.text-area-input {
+  margin-top: -1px;
+  color: $font-colour-dark;
+  width: 100%;
+  background-color: $background-colour-two;
+  border: 0;
+  font-size: $font-size-medium;
+  resize: none;
+
+  // Underline
+  background-attachment: local;
+  line-height: $font-size-large;
+  background-image: linear-gradient(
+    transparent,
+    transparent calc(#{$font-size-large} - 3px),
+    $font-colour-dark calc(#{$font-size-large} - 3px)
+  );
+  background-size: $font-size-large $font-size-large;
+
+  // Scroll bar
+  @include styled-scrollbar(
+    $font-size-extra-small,
+    $background-colour-dark,
+    $background-colour-two,
+    $background-colour-two
+  );
+}
+
+.submit-wrapper {
+  @include flex(column);
+  align-items: center;
+  justify-content: center;
+}
+
+.submit {
+  border: 3px solid $font-colour-dark;
+  margin: 0 auto;
+  width: fit-content;
+  padding: 0 $font-size-extra-small;
+  text-transform: uppercase;
+  font-weight: 700;
+  appearance: none;
 }
 
 //********** Honeypot **********
@@ -152,83 +318,6 @@ select {
 // *=========================================
 // ** Footer  **
 // *=========================================
-
-//*=========================================
-//** Utility & Accessibility  **
-//*=========================================
-
-//* Remove all animations and transitions for people that prefer not to see them
-@media (prefers-reduced-motion: reduce) {
-  * {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
-}
-
-//*Skip to content link
-.show-on-focus {
-  position: absolute;
-  color: $font-colour-dark;
-  background-color: $light-background-colour;
-  padding: 10px;
-  //TODO: Add font size variable
-  font-size: 30px;
-  top: 0;
-  left: 0;
-  width: 1px;
-  height: 1px;
-  margin: 0.5rem 0 0 0.5rem;
-  overflow: hidden;
-  clip: rect(1px, 1px, 1px, 1px);
-  text-decoration: none;
-
-  &:focus {
-    z-index: 20;
-    width: auto;
-    height: auto;
-    clip: auto;
-  }
-}
-
-//* Hides outline unless tab key is pressed
-
-body:not(.user-is-tabbing) button:focus,
-body:not(.user-is-tabbing) input:focus,
-body:not(.user-is-tabbing) select:focus,
-body:not(.user-is-tabbing) textarea:focus {
-  outline: none;
-}
-
-.user-is-tabbing {
-  a:focus,
-  button:focus,
-  input:focus,
-  textarea:focus {
-    outline: 3px dashed #ff5e00;
-  }
-}
-
-//********** Visually Hidden  **********
-
-.visually-hidden {
-  clip: rect(0 0 0 0);
-  clip-path: inset(50%);
-  height: 1px;
-  overflow: hidden;
-  position: absolute;
-  white-space: nowrap;
-  width: 1px;
-}
-
-//********** Perch Debug **********
-//TODO: Remove debug styles
-
-html body table.perch-debug td,
-html body table.perch-debug th {
-  font-size: 20px !important;
-}
 
 //*=========================================
 //** Cookie Warning **
@@ -296,6 +385,87 @@ html body table.perch-debug th {
 
 .cookie-warning-wrapper.show-cookie-warning {
   opacity: 1;
+}
+
+//*=========================================
+//** Utility & Accessibility  **
+//*=========================================
+
+//* Remove all animations and transitions for people that prefer not to see them
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+//*Skip to content link
+.show-on-focus {
+  position: absolute;
+  color: $font-colour-dark;
+  background-color: $background-colour-light;
+  padding: 10px;
+  //TODO: Add font size variable
+  font-size: 30px;
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 1px;
+  margin: 0.5rem 0 0 0.5rem;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+  text-decoration: none;
+
+  &:focus {
+    z-index: 20;
+    width: auto;
+    height: auto;
+    clip: auto;
+  }
+}
+
+//* Hides outline unless tab key is pressed
+
+body:not(.user-is-tabbing) button:focus,
+body:not(.user-is-tabbing) input:focus,
+body:not(.user-is-tabbing) select:focus,
+body:not(.user-is-tabbing) textarea:focus {
+  outline: none;
+}
+
+.user-is-tabbing {
+  a:focus,
+  button:focus,
+  input:focus,
+  textarea:focus {
+    outline: 3px dashed #ff5e00;
+  }
+}
+
+//********** Visually Hidden  **********
+
+.visually-hidden {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+//********** Perch Debug **********
+
+//TODO: Remove debug styles
+
+.perch-debug {
+  margin: 100px !important;
+  td,
+  th {
+    font-size: 20px !important;
+  }
 }
 
 //*=========================================
