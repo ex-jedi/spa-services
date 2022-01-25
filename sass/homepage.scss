@@ -300,5 +300,13 @@
 .homepage-testimonials-section {
   background-color: $background-colour-three;
   color: $font-colour-light;
-  padding-inline: $section-spacing-large;
+  padding-inline: $section-spacing-super-large;
+
+  @include breakpoint(1600) {
+    padding-inline: $section-spacing-extra-large;
+  }
+
+  @include breakpoint(1300) {
+    padding-inline: $section-spacing-large;
+  }
 }
