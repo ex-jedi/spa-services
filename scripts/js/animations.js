@@ -21,7 +21,7 @@ gsap.registerPlugin(CSSRulePlugin, ScrollTrigger);
 // *=========================================
 
 // Media query for menu
-const mediaNineFifty = window.matchMedia('(max-width: 950px)');
+const mediaElevenHundred = window.matchMedia('(max-width: 1100px)');
 
 // match media for nav animation timing
 const mediaSevenFifty = window.matchMedia('(max-width: 750px)');
@@ -63,7 +63,7 @@ function menuOpenAnimation(startPosition, endPosition) {
 function navOpenerHandler() {
   let beginning = { x: '-100%', y: 0 };
   let end = { x: '0%', y: '0%' };
-  if (mediaNineFifty.matches) {
+  if (mediaElevenHundred.matches) {
     beginning = { x: '0%', y: '100%' };
     end = { y: '0%', x: '0%' };
   }
@@ -74,7 +74,7 @@ function navOpenerHandler() {
 
 function closeMenuAnimation() {
   let endPosition = { x: '-100%', y: '0%' };
-  if (mediaNineFifty.matches) {
+  if (mediaElevenHundred.matches) {
     endPosition = { y: '100%', x: '0%' };
   }
   const { mainNav, mainNavLinks, mainNavCloser } = getNavElements();
