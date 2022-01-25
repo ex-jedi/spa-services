@@ -1,0 +1,2 @@
+:root{--vertical-section-spacing:20rem;--horizontal-section-spacing:40rem;--heading-spacing:20rem}@media (max-width:1500px){:root{--vertical-spacing:15rem}}@media (max-width:700px){:root{--vertical-spacing:10rem}}.header-content-wrapper{padding:var(--vertical-section-spacing) 40rem 0;color:#144884}.pages-header-subtitle{font-size:3.8rem;margin-bottom:0}
+/*# sourceMappingURL=pages.css.map */

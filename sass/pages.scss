@@ -1,0 +1,23 @@
+// *=======================================================================================
+// ** Imports & Mixins  **
+// *=======================================================================================
+
+//*=========================================
+//** Imports **
+//*=========================================
+
+@use 'bits' as *; //Contains variables, media queries mixins etc.
+
+//*=========================================
+//** Header **
+//*=========================================
+
+.header-content-wrapper {
+  padding: var(--vertical-section-spacing) $section-spacing-super-large 0;
+  color: $font-colour-dark;
+}
+
+.pages-header-subtitle {
+  font-size: $font-size-medium;
+  margin-bottom: 0;
+}
