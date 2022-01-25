@@ -191,6 +191,17 @@ a {
   height: fit-content;
 }
 
+.main-nav-closer {
+  position: absolute;
+  top: 10rem;
+  right: 10rem;
+  background-color: transparent;
+  border: 0;
+  height: 75px;
+  width: 75px;
+  cursor: pointer;
+}
+
 .sideways-text {
   transform: rotate(180deg);
   writing-mode: vertical-rl;
@@ -209,11 +220,16 @@ a {
   background-color: $background-colour-two;
   position: absolute;
   inset: 0;
+  transform: translateX(-100%);
+  z-index: 5;
 }
 
 .main-nav-link {
   font-size: $font-size-large;
   text-decoration: none;
+  transform: translateY(100px);
+  color: $font-colour-dark;
+  opacity: 0;
 
   &:not(:last-of-type) {
     margin-bottom: $paragraph-spacing-medium;
@@ -221,7 +237,7 @@ a {
 }
 
 #main-nav-current {
-  color: $font-colour-dark;
+  color: $link-colour;
   text-decoration: underline;
   // pointer-events: none;
   cursor: not-allowed;
