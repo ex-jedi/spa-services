@@ -15,9 +15,14 @@
 .header-content-wrapper {
   padding: $section-spacing-large $section-spacing-super-large 0;
   color: $font-colour-dark;
+  margin-left: 80px;
 
   @include breakpoint(1600) {
     padding: $section-spacing-large $section-spacing-extra-large 0;
+  }
+
+  @include breakpoint(1300) {
+    padding: $section-spacing-large $section-spacing-large 0;
   }
 }
 
@@ -37,9 +42,14 @@
 .pages-content-wrapper {
   padding: $section-spacing-large $section-spacing-super-large;
   background-color: $background-colour-one;
+  margin-left: 80px;
 
   @include breakpoint(1600) {
     padding: $section-spacing-large $section-spacing-extra-large;
+  }
+
+  @include breakpoint(1300) {
+    padding: $section-spacing-large $section-spacing-large;
   }
 }
 
