@@ -21,6 +21,7 @@
 
   @include breakpoint(1100) {
     padding: $header-spacing-medium $header-spacing-large 0;
+    margin-left: 0;
   }
 }
 

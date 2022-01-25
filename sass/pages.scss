@@ -62,6 +62,7 @@
 
   @include breakpoint(1100) {
     padding: $section-spacing-medium;
+    margin-left: 0;
   }
 }
 

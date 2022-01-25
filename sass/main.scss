@@ -113,6 +113,7 @@ section {
 
   @include breakpoint(1100) {
     padding-block: $section-spacing-medium;
+    margin-left: 0;
   }
 }
 
@@ -432,6 +433,7 @@ input {
 
   @include breakpoint(1100) {
     padding: $section-spacing-medium;
+    margin: 0;
   }
 }
 
