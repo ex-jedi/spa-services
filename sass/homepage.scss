@@ -18,6 +18,10 @@
   @include breakpoint(1600) {
     margin-left: 100px;
   }
+
+  @include breakpoint(1100) {
+    padding: $header-spacing-medium $header-spacing-large 0;
+  }
 }
 
 .homepage-header-main-heading {
@@ -26,6 +30,10 @@
   width: 100%;
   max-width: 1000px;
   margin-bottom: $header-spacing-large;
+
+  @include breakpoint(1100) {
+    margin-bottom: $header-spacing-medium;
+  }
 }
 
 .header-content-flex-wrapper {
@@ -54,7 +62,11 @@
     max-height: 98vh;
     object-fit: contain;
     aspect-ratio: 1/1;
-    margin: 0 auto $section-spacing-small;
+    margin: 0 auto $section-spacing-large;
+  }
+
+  @include breakpoint(1100) {
+    margin: 0 auto $section-spacing-medium;
   }
 }
 
@@ -80,6 +92,10 @@
 .homepage-services-flex-wrapper {
   @include flex(row);
   padding-bottom: $section-spacing-large;
+
+  @include breakpoint(1100) {
+    padding-bottom: $section-spacing-medium;
+  }
 }
 
 .homepage-services-link-section-image {
@@ -124,6 +140,10 @@
 
   @include breakpoint(1300) {
     width: 75%;
+  }
+
+  @include breakpoint(1100) {
+    padding-bottom: $section-spacing-medium;
   }
 }
 
@@ -308,5 +328,9 @@
 
   @include breakpoint(1300) {
     padding-inline: $section-spacing-large;
+  }
+
+  @include breakpoint(1100) {
+    padding-inline: $section-spacing-medium;
   }
 }

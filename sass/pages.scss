@@ -24,6 +24,10 @@
   @include breakpoint(1300) {
     padding: $section-spacing-large $section-spacing-large 0;
   }
+
+  @include breakpoint(1100) {
+    padding: $section-spacing-medium $section-spacing-medium 0;
+  }
 }
 
 .pages-header-main-heading {
@@ -33,6 +37,10 @@
 .pages-header-subtitle {
   font-size: $font-size-medium;
   margin: $section-spacing-large 0 0;
+
+  @include breakpoint(1100) {
+    margin: $section-spacing-medium 0 0;
+  }
 }
 
 //*=========================================
@@ -49,7 +57,11 @@
   }
 
   @include breakpoint(1300) {
-    padding: $section-spacing-large $section-spacing-large;
+    padding: $section-spacing-large;
+  }
+
+  @include breakpoint(1100) {
+    padding: $section-spacing-medium;
   }
 }
 
@@ -72,15 +84,27 @@
   &:last-of-type {
     padding-bottom: 0;
   }
-}
 
-.block-textwrapper {
-  margin-bottom: $section-spacing-small;
+  @include breakpoint(1100) {
+    padding-bottom: $section-spacing-medium;
+  }
 }
 
 .pages-subtitle {
   text-align: left;
   margin-bottom: $section-spacing-small;
+
+  @include breakpoint(1100) {
+    margin-bottom: $section-spacing-smaller;
+  }
+}
+
+.block-textwrapper {
+  margin-bottom: $section-spacing-small;
+
+  @include breakpoint(1100) {
+    margin-bottom: $section-spacing-smaller;
+  }
 }
 
 .pages-block-image {

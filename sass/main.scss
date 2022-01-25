@@ -272,6 +272,10 @@ a {
   @include breakpoint(1300) {
     padding-inline: $section-spacing-large;
   }
+
+  @include breakpoint(1100) {
+    padding-inline: $section-spacing-medium;
+  }
 }
 
 .main-contact-form {
@@ -404,6 +408,10 @@ input {
 
   @include breakpoint(1300) {
     padding: $section-spacing-large $section-spacing-extra-large;
+  }
+
+  @include breakpoint(1100) {
+    padding: $section-spacing-medium;
   }
 }
 
