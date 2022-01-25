@@ -33,6 +33,10 @@
 .pages-content-wrapper {
   padding: $section-spacing-large $section-spacing-super-large;
   background-color: $background-colour-one;
+
+  @include breakpoint(1600) {
+    padding: $section-spacing-large $section-spacing-extra-large;
+  }
 }
 
 .pages-block-wrapper {
