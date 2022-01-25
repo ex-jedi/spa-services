@@ -5,7 +5,7 @@
 // TODO: Minify
 import * as Flickity from 'flickity';
 import 'flickity-imagesloaded';
-
+import { gsap } from 'gsap';
 // *==============================================================================
 // ** Page JS  **
 // *==============================================================================
@@ -24,3 +24,19 @@ const flkty = new Flickity(carousel, {
 // *==============================================================================
 // ** Imported  **
 // *==============================================================================
+
+// *=========================================
+// ** Nav Animation  **
+// *=========================================
+
+// Get nav elements
+const navTrigger = document.querySelector('#main-nav-trigger');
+const currentNav = document.querySelector('#main-nav-current');
+const mainNav = document.querySelector('.main-nav');
+console.log(mainNav);
+
+// Prevent current nav clicks working
+currentNav.addEventListener('click', (e) => e.preventDefault());
+
+// Nav animation
+navTrigger.addEventListener('click', () => alert('Click'));

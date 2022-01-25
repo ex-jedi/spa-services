@@ -201,7 +201,30 @@ a {
 }
 
 .main-nav {
-  display: none;
+  @include flex(column);
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  background-color: $background-colour-two;
+  position: absolute;
+  inset: 0;
+}
+
+.main-nav-link {
+  font-size: $font-size-large;
+  text-decoration: none;
+
+  &:not(:last-of-type) {
+    margin-bottom: $paragraph-spacing-medium;
+  }
+}
+
+#main-nav-current {
+  color: $font-colour-dark;
+  text-decoration: underline;
+  // pointer-events: none;
+  cursor: not-allowed;
 }
 
 //********** Responsive Styles **********
