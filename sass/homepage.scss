@@ -334,4 +334,8 @@
   @include breakpoint(1100) {
     padding-inline: $section-spacing-medium;
   }
+
+  @include breakpoint(900) {
+    padding-inline: $section-spacing-small;
+  }
 }

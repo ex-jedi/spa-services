@@ -297,6 +297,10 @@ a {
   @include breakpoint(1100) {
     padding-inline: $section-spacing-medium;
   }
+
+  @include breakpoint(1100) {
+    padding-inline: $section-spacing-small;
+  }
 }
 
 .main-contact-form {
@@ -334,6 +338,7 @@ input {
   border-left: 0;
   border-bottom: 3px solid $font-colour-dark;
   font-size: $font-size-medium;
+  width: 100%;
 }
 
 .text-area-input-wrapper {
@@ -433,6 +438,11 @@ input {
 
   @include breakpoint(1100) {
     padding: $section-spacing-medium;
+    margin: 0;
+  }
+
+  @include breakpoint(900) {
+    padding: $section-spacing-medium $section-spacing-small;
     margin: 0;
   }
 }
