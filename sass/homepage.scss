@@ -14,6 +14,10 @@
 
 .header-content {
   padding: $header-spacing-large $header-spacing-large 0;
+
+  @include breakpoint(1600) {
+    margin-left: 100px;
+  }
 }
 
 .homepage-header-main-heading {
@@ -27,6 +31,11 @@
 .header-content-flex-wrapper {
   @include flex(row);
   margin: 0 $header-spacing-large;
+  align-items: center;
+
+  @include breakpoint(1600) {
+    @include flex(column);
+  }
 }
 
 .homepage-header-image {
@@ -35,11 +44,23 @@
   height: 100%;
   margin-right: $header-spacing-large;
   object-fit: cover;
+
+  @include breakpoint(1600) {
+    width: 100%;
+    max-height: 98vh;
+    object-fit: contain;
+    aspect-ratio: 1/1;
+    margin: 0 auto $section-spacing-small;
+  }
 }
 
 .header-text-area {
   flex: 0 1 auto;
   width: 50%;
+
+  @include breakpoint(1600) {
+    width: 100%;
+  }
 }
 
 //*=========================================
