@@ -106,7 +106,7 @@ function navCloserHandler() {
 function addMenuListener() {
   const { mainNavTrigger, mainNavCloser } = getNavElements();
   mainNavTrigger.addEventListener('click', navOpenerHandler);
-  mainNavCloser.addEventListener('click', navCloserHandler);
+  // mainNavCloser.addEventListener('click', navCloserHandler);
 }
 
 addMenuListener();
