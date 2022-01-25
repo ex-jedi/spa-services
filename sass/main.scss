@@ -330,6 +330,10 @@ input {
   a {
     color: inherit;
   }
+
+  p {
+    margin-bottom: $paragraph-spacing-small;
+  }
 }
 
 //*=========================================
