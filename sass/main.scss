@@ -186,6 +186,19 @@ a {
   width: 100px;
   z-index: 4;
   border-right: 3px solid $font-colour-light;
+
+  @include breakpoint(1100) {
+    justify-content: center;
+    align-items: center;
+    top: unset;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: auto;
+    width: 100%;
+    border-right: 0;
+    border-top: 3px solid $font-colour-light;
+  }
 }
 
 .main-nav-trigger {
@@ -216,6 +229,13 @@ a {
   font-size: $font-size-medium;
   color: $font-colour-dark;
   font-weight: 700;
+
+  @include breakpoint(1100) {
+    writing-mode: horizontal-tb;
+    text-orientation: upright;
+    transform: rotate(0deg);
+    left: 0;
+  }
 }
 
 .main-nav {
