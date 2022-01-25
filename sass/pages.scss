@@ -15,6 +15,10 @@
 .header-content-wrapper {
   padding: $section-spacing-large $section-spacing-super-large 0;
   color: $font-colour-dark;
+
+  @include breakpoint(1600) {
+    padding: $section-spacing-large $section-spacing-extra-large 0;
+  }
 }
 
 .pages-header-main-heading {
