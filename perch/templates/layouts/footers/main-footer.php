@@ -7,7 +7,7 @@
 			<a href="/terms.php">Terms of use</a>
 		</p>
 		<p class="footer-copyright" >
-			&copy; <?php echo date("Y"); ?> <span itemprop="name">XXXX XXXX</span>
+			&copy; <?php echo date("Y"); ?> <span itemprop="name">Spa Service</span>
 		</p>
 		<p class="footer-credit">
 			Web design & development, brand design & illustration by <a href="" class="promo-link">phoenix & phoenix</a>

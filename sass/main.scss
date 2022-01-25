@@ -319,6 +319,17 @@ input {
 // ** Footer  **
 // *=========================================
 
+.main-footer {
+  background-color: $background-colour-dark;
+  color: $font-colour-light;
+  font-size: $font-size-small;
+  font-weight: 400;
+
+  a {
+    color: inherit;
+  }
+}
+
 //*=========================================
 //** Cookie Warning **
 //*=========================================
