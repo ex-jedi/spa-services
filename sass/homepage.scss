@@ -23,6 +23,11 @@
     padding: $header-spacing-medium $header-spacing-large 0;
     margin-left: 0;
   }
+
+  @include breakpoint(750) {
+    padding: $header-spacing-small $header-spacing-tiny 0;
+    margin-left: 0;
+  }
 }
 
 .homepage-header-main-heading {
@@ -34,6 +39,10 @@
 
   @include breakpoint(1100) {
     margin-bottom: $header-spacing-medium;
+  }
+
+  @include breakpoint(1100) {
+    margin-bottom: $header-spacing-small;
   }
 }
 
@@ -69,6 +78,10 @@
   @include breakpoint(1100) {
     margin: 0 auto $section-spacing-medium;
   }
+
+  @include breakpoint(750) {
+    margin: 0 auto $section-spacing-small;
+  }
 }
 
 .header-text-area {
@@ -96,6 +109,10 @@
 
   @include breakpoint(1100) {
     padding-bottom: $section-spacing-medium;
+  }
+
+  @include breakpoint(750) {
+    padding-bottom: $section-spacing-small;
   }
 }
 
@@ -145,6 +162,12 @@
 
   @include breakpoint(1100) {
     padding-bottom: $section-spacing-medium;
+  }
+
+  @include breakpoint(750) {
+    padding-bottom: $section-spacing-small;
+    width: auto;
+    margin: 0 $section-spacing-super-tiny 0;
   }
 }
 
@@ -337,5 +360,9 @@
 
   @include breakpoint(900) {
     padding-inline: $section-spacing-small;
+  }
+
+  @include breakpoint(750) {
+    padding-inline: $section-spacing-super-tiny;
   }
 }

@@ -82,6 +82,14 @@ h1,
 h2 {
   font-size: $font-size-extra-large;
   margin: 0 auto $section-spacing-large;
+
+  @include breakpoint(1100) {
+    margin: 0 auto $section-spacing-medium;
+  }
+
+  @include breakpoint(750) {
+    margin: 0 auto $section-spacing-small;
+  }
 }
 
 //********** Containers **********
@@ -113,6 +121,11 @@ section {
 
   @include breakpoint(1100) {
     padding-block: $section-spacing-medium;
+    margin-left: 0;
+  }
+
+  @include breakpoint(750) {
+    padding-block: $section-spacing-small;
     margin-left: 0;
   }
 }
@@ -301,6 +314,10 @@ a {
   @include breakpoint(1100) {
     padding-inline: $section-spacing-small;
   }
+
+  @include breakpoint(750) {
+    padding-inline: $section-spacing-super-tiny;
+  }
 }
 
 .main-contact-form {
@@ -443,6 +460,11 @@ input {
 
   @include breakpoint(900) {
     padding: $section-spacing-medium $section-spacing-small;
+    margin: 0;
+  }
+
+  @include breakpoint(900) {
+    padding: $section-spacing-small $section-spacing-super-tiny;
     margin: 0;
   }
 }
