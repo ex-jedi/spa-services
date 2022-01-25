@@ -36,6 +36,10 @@
   @include breakpoint(1600) {
     @include flex(column);
   }
+
+  @include breakpoint(1300) {
+    margin: 0;
+  }
 }
 
 .homepage-header-image {
@@ -109,6 +113,10 @@
 .services-find-out-more-paragraph {
   width: 50%;
   padding-bottom: var(--vertical-section-spacing);
+
+  @include breakpoint(1300) {
+    width: 75%;
+  }
 }
 
 //*=========================================

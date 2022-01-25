@@ -126,7 +126,8 @@ $paragraph-spacing-small: 1.25rem;
   // Headings
   --heading-spacing: #{$heading-spacing-large};
 
-  @include breakpoint(1500) {
+  @include breakpoint(1600) {
+    --horizontal-section-spacing: #{$section-spacing-large};
     --vertical-spacing: #{$section-spacing-medium};
   }
 
