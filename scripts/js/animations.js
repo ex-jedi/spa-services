@@ -106,9 +106,9 @@ function addMenuListener() {
 
 const responsiveCheck = window.matchMedia('(max-width: 1000px)');
 
-let triggerPoint = 'top 70%';
+let triggerPoint = 'top 75%';
 if (responsiveCheck.matches) {
-  triggerPoint = 'top 85%';
+  triggerPoint = 'top 90%';
 }
 
 function simpleFadeUp() {
@@ -121,8 +121,8 @@ function simpleFadeUp() {
       end: 'bottom 10%',
       once: true,
       id: 'Simple Fade Up',
-      markers: true,
-      onEnter: () => gsap.to(elem, { delay: 0.2, opacity: 1, y: 0, duration: 0.5 }),
+      // markers: true,
+      onEnter: () => gsap.to(elem, { delay: 0.2, opacity: 1, y: 0, duration: 0.6, ease: 'power3.inOut' }),
     });
   });
 }
@@ -137,8 +137,8 @@ function simpleFadeRight() {
       end: 'bottom 10%',
       once: true,
       id: 'Simple Fade Right',
-      markers: true,
-      onEnter: () => gsap.to(elem, { delay: 0.2, opacity: 1, x: 0, duration: 0.5 }),
+      // markers: true,
+      onEnter: () => gsap.to(elem, { delay: 0.2, opacity: 1, x: 0, duration: 0.6, ease: 'power3.inOut' }),
     });
   });
 }

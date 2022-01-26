@@ -2,7 +2,7 @@
 // ** Imported  **
 // *==============================================================================
 
-import { addMenuListener } from './animations';
+import { addMenuListener, simpleFadeUp, simpleFadeRight, scrollTriggerRefresh } from './animations';
 import { cookieWarning } from './utils';
 
 // *=========================================
@@ -11,6 +11,9 @@ import { cookieWarning } from './utils';
 
 // ********** Animations **********
 addMenuListener();
+simpleFadeUp();
+simpleFadeRight();
+scrollTriggerRefresh();
 
 // ********** Utils **********
 cookieWarning();
