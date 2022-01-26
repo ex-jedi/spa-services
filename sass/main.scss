@@ -559,10 +559,12 @@ input {
   padding: 1rem;
   font-size: 30px;
   //TODO: Add variables for cookie warning colour
-  background-color: #fff;
-  opacity: 0;
+  background-color: $background-colour-three;
+  opacity: 1;
   z-index: 10;
   transition: all 0.5s 0.25s;
+  font-weight: 400;
+  border: 3px solid $background-colour-light;
 
   @include breakpoint(1100) {
     font-size: 20px;
@@ -576,7 +578,7 @@ input {
 .cookie-warning-paragraph {
   //TODO: Add variables for cookie warning spacing
   margin: 0 $section-spacing-large 0 0;
-  color: #000;
+  color: $font-colour-light;
 
   @include breakpoint(1300) {
     //TODO: Add variables for cookie warning spacing
@@ -599,8 +601,8 @@ input {
   //TODO: Add variables for cookie warning spacing & colour
 
   background-color: transparent;
-  border: 2px solid #000;
-  color: #000;
+  border: 2px solid $font-colour-light;
+  color: $font-colour-light;
   font-size: inherit;
   padding: 5px 20px;
   width: fit-content;
