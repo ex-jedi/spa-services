@@ -144,6 +144,10 @@ p {
 .main-body-font {
   font-size: $font-size-medium;
   font-weight: 400;
+
+  @include breakpoint(750) {
+    font-size: $font-size-small;
+  }
 }
 
 // *=========================================
@@ -223,6 +227,10 @@ a {
   padding: 25px;
   width: fit-content;
   height: fit-content;
+
+  @include breakpoint(750) {
+    padding: 12.5px;
+  }
 }
 
 .main-nav-closer {
@@ -249,6 +257,10 @@ a {
     text-orientation: upright;
     transform: rotate(0deg);
     left: 0;
+  }
+
+  @include breakpoint(750) {
+    font-size: $font-size-small;
   }
 }
 

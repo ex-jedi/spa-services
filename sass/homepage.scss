@@ -44,6 +44,10 @@
   @include breakpoint(1100) {
     margin-bottom: $header-spacing-small;
   }
+
+  @include breakpoint(750) {
+    font-size: $font-size-medium;
+  }
 }
 
 .header-content-flex-wrapper {
