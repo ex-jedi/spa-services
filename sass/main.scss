@@ -494,6 +494,12 @@ input {
   @include breakpoint(1100) {
     padding: $section-spacing-medium;
     margin: 0;
+
+    div {
+      &:not(:last-of-type) {
+        margin-bottom: $section-spacing-smaller;
+      }
+    }
   }
 
   @include breakpoint(900) {
@@ -508,6 +514,12 @@ input {
 
   @include breakpoint(750) {
     font-size: $font-size-extra-small;
+
+    div {
+      &:not(:last-of-type) {
+        margin-bottom: $section-spacing-tiny;
+      }
+    }
   }
 }
 
