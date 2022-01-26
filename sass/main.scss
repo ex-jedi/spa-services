@@ -352,12 +352,28 @@ textarea {
   justify-content: flex-start;
   align-items: flex-end;
   margin-bottom: $section-spacing-small;
+
+  @include breakpoint(1100) {
+    @include flex(column);
+    align-items: flex-start;
+    margin-bottom: $section-spacing-smaller;
+  }
+
+  @include breakpoint(750) {
+    margin-bottom: $section-spacing-tiny;
+  }
 }
 
 label {
   font-size: $font-size-medium;
   font-weight: 700;
   margin-right: 10px;
+
+  @include breakpoint(750) {
+    font-size: $font-size-small;
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
 }
 
 input {
@@ -369,6 +385,11 @@ input {
   border-bottom: 3px solid $font-colour-dark;
   font-size: $font-size-medium;
   width: 100%;
+  border-radius: 0;
+
+  @include breakpoint(750) {
+    font-size: $font-size-small;
+  }
 }
 
 .text-area-input-wrapper {
@@ -401,6 +422,10 @@ input {
     $background-colour-two,
     $background-colour-two
   );
+
+  @include breakpoint(750) {
+    font-size: $font-size-small;
+  }
 }
 
 .submit-wrapper {
@@ -479,6 +504,10 @@ input {
   @include breakpoint(900) {
     padding: $section-spacing-small $section-spacing-super-tiny;
     margin: 0;
+  }
+
+  @include breakpoint(750) {
+    font-size: $font-size-extra-small;
   }
 }
 
