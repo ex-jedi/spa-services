@@ -118,7 +118,7 @@
   }
 
   @include breakpoint(750) {
-    padding-bottom: calc(#{$section-spacing-small} + 50px);
+    padding-bottom: calc(#{$section-spacing-small} + 25px);
 
     &:nth-child(odd) {
       img {
