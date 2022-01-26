@@ -465,6 +465,19 @@ input {
   appearance: none;
 }
 
+//********** Success **********
+.success {
+  @include flex(column);
+  justify-content: center;
+  align-items: center;
+  font-size: $font-size-large;
+  text-align: center;
+
+  @include breakpoint(750) {
+    font-size: $font-size-medium;
+  }
+}
+
 //********** Honeypot **********
 
 .form-identification-number {
