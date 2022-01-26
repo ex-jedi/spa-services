@@ -89,7 +89,7 @@
 
   @include breakpoint(750) {
     padding: $section-spacing-small $section-spacing-super-tiny
-      calc(#{$section-spacing-small} + 50px);
+      calc(#{$section-spacing-small} + 25px);
   }
 }
 
@@ -119,6 +119,18 @@
 
   @include breakpoint(750) {
     padding-bottom: calc(#{$section-spacing-small} + 50px);
+
+    &:nth-child(odd) {
+      img {
+        box-shadow: 25px 25px $background-colour-two;
+      }
+    }
+
+    &:nth-child(even) {
+      img {
+        box-shadow: 25px 25px $background-colour-three;
+      }
+    }
   }
 }
 
