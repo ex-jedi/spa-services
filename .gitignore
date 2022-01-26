@@ -3,6 +3,7 @@ node_modules
 .vscode
 .prettierrc
 .eslintrc
+.htaccess
 
 #Perch Files
 perch/resources/
