@@ -113,6 +113,7 @@
 
   @include breakpoint(750) {
     padding-bottom: $section-spacing-small;
+    @include flex(column);
   }
 }
 
@@ -120,6 +121,10 @@
   flex: 0 1 auto;
   width: 50%;
   height: 100%;
+
+  @include breakpoint(750) {
+    width: 100%;
+  }
 }
 
 .services-link-text-wrapper {
@@ -130,6 +135,11 @@
   width: 50%;
   height: auto;
   background-color: $background-colour-three;
+
+  @include breakpoint(750) {
+    width: 100%;
+    aspect-ratio: 1/1;
+  }
 }
 
 .homepage-services-link-text {
@@ -144,6 +154,10 @@
 
   @include breakpoint(1100) {
     font-size: $font-size-small;
+  }
+
+  @include breakpoint(750) {
+    font-size: $font-size-medium;
   }
 }
 
