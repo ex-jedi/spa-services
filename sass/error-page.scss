@@ -20,27 +20,27 @@
   @include breakpoint(750) {
     padding: $section-spacing-small;
   }
-}
 
-h1 {
-  margin: $section-spacing-large auto 0;
-  color: $font-colour-dark;
+  h1 {
+    margin: $section-spacing-large auto 0;
+    color: $font-colour-dark;
 
-  @include breakpoint(1100) {
-    margin: $section-spacing-medium auto 0;
+    @include breakpoint(1100) {
+      margin: $section-spacing-medium auto 0;
+    }
+
+    @include breakpoint(750) {
+      margin: $section-spacing-small auto 0;
+    }
   }
 
-  @include breakpoint(750) {
-    margin: $section-spacing-small auto 0;
+  h2,
+  h3 {
+    font-size: $font-size-large;
   }
-}
 
-h2,
-h3 {
-  font-size: $font-size-large;
-}
-
-p {
-  font-size: $font-size-medium;
-  text-align: center;
+  p {
+    font-size: $font-size-medium;
+    text-align: center;
+  }
 }
