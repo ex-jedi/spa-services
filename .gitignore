@@ -1,8 +1,6 @@
 #General Stuff
 node_modules
 .vscode
-.prettierrc
-.eslintrc
 .htaccess
 
 #Perch Files
