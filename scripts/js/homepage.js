@@ -10,7 +10,7 @@ import 'flickity-imagesloaded';
 // ** Imported  **
 // *==============================================================================
 
-import { addMenuListener } from './animations';
+import { addMenuListener, simpleFadeUp, simpleFadeRight, scrollTriggerRefresh } from './animations';
 import { cookieWarning } from './utils';
 
 // *==============================================================================
@@ -28,12 +28,21 @@ const flkty = new Flickity(carousel, {
   friction: 0.15,
 });
 
+const testimonialsWrapper = document.querySelector('.homepage-testimonials-text-wrapper');
+
+const testimonialsParagraph = testimonialsWrapper.querySelectorAll('p');
+
+testimonialsParagraph.forEach((paragraph) => paragraph.classList.add('simple-fade-right'));
+
 // *=========================================
 // ** Imports  **
 // *=========================================
 
 // ********** Animations **********
 addMenuListener();
+simpleFadeRight();
+simpleFadeUp();
+scrollTriggerRefresh();
 
 // ********** Utils **********
 cookieWarning();

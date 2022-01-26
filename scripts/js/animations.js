@@ -104,15 +104,20 @@ function addMenuListener() {
 // ** Simple Fade Up  **
 // *=========================================
 
+const responsiveCheck = window.matchMedia('(max-width: 1000px)');
+
+let triggerPoint = 'top 70%';
+if (responsiveCheck.matches) {
+  triggerPoint = 'top 85%';
+}
+
 function simpleFadeUp() {
   const fadeUp = gsap.utils.toArray(document.querySelectorAll('.simple-fade-up'));
-  console.log(fadeUp);
-
   fadeUp.forEach((elem) => {
     gsap.set(elem, { opacity: 0, y: 40 });
     ScrollTrigger.create({
       trigger: elem,
-      start: 'top 70%',
+      start: triggerPoint,
       end: 'bottom 10%',
       once: true,
       id: 'Simple Fade Up',
@@ -124,26 +129,47 @@ function simpleFadeUp() {
 
 function simpleFadeRight() {
   const fadeRight = gsap.utils.toArray(document.querySelectorAll('.simple-fade-right'));
-  console.log(fadeRight);
-
   fadeRight.forEach((elem) => {
     gsap.set(elem, { opacity: 0, x: -40 });
     ScrollTrigger.create({
       trigger: elem,
-      start: 'top 80%',
-      end: 'bottom 20%',
+      start: triggerPoint,
+      end: 'bottom 10%',
       once: true,
-      id: 'Simple Fade Up',
+      id: 'Simple Fade Right',
       markers: true,
       onEnter: () => gsap.to(elem, { delay: 0.2, opacity: 1, x: 0, duration: 0.5 }),
     });
   });
 }
 
-simpleFadeRight();
-simpleFadeUp();
+// ********** Scrolltrigger Refresh **********
+
+// * ScrollTrigger Refresh
+function scrollTriggerRefresh(time = 1000) {
+  const scrollTriggerRefreshTarget = document.querySelectorAll('.scrolltrigger-refresh-target');
+  window.addEventListener('load', () => {
+    setTimeout(() => {
+      console.log(`✨ ScrollTrigger refresh created after ${time}ms ✨`);
+      scrollTriggerRefreshTarget.forEach((triggerElem) => {
+        ScrollTrigger.create({
+          trigger: triggerElem,
+          start: 'top bottom',
+          once: true,
+          id: 'ScrollTrigger Refresh',
+          // markers: true,
+          onEnter: () => {
+            ScrollTrigger.refresh();
+            console.log('⚡ ScrollTrigger Refresh Triggered ⚡');
+          },
+        });
+      });
+    }, time);
+  });
+}
+
 // *=========================================
 // ** Exports  **
 // *=========================================
 
-export { addMenuListener };
+export { addMenuListener, simpleFadeRight, simpleFadeUp, scrollTriggerRefresh };
