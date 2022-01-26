@@ -11,7 +11,7 @@ import 'flickity-imagesloaded';
 // *==============================================================================
 
 import { addMenuListener, simpleFadeUp, simpleFadeRight, scrollTriggerRefresh } from './animations';
-import { cookieWarning } from './utils';
+import { cookieWarning, consoleGreeting } from './utils';
 
 // *==============================================================================
 // ** Page JS  **
@@ -46,3 +46,4 @@ scrollTriggerRefresh();
 
 // ********** Utils **********
 cookieWarning();
+consoleGreeting();

@@ -25,8 +25,18 @@ function cookieWarning() {
   );
 }
 
+// *=========================================
+// ** Console Greeting  **
+// *=========================================
+
+function consoleGreeting() {
+  console.log(
+    "Well hello👋🏾! Fancy seeing you here. As you're interested in this sort of thing why not have a look at my GitHub profile - 💻 https://github.com/ex-jedi 💻"
+  );
+}
+
 // *==============================================================================
 // ** Exports  **
 // *==============================================================================
 
-export { cookieWarning };
+export { cookieWarning, consoleGreeting };
