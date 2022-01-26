@@ -11,6 +11,8 @@ import 'flickity-imagesloaded';
 // *==============================================================================
 
 import { addMenuListener } from './animations';
+import { cookieWarning } from './utils';
+
 // *==============================================================================
 // ** Page JS  **
 // *==============================================================================
@@ -32,3 +34,6 @@ const flkty = new Flickity(carousel, {
 
 // ********** Animations **********
 addMenuListener();
+
+// ********** Utils **********
+cookieWarning();

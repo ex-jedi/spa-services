@@ -11906,6 +11906,49 @@ ScrollTrigger.sort = function (func) {
 _getGSAP() && gsap.registerPlugin(ScrollTrigger);
 
 
+/***/ }),
+/* 26 */
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "cookieWarning": function() { return /* binding */ cookieWarning; }
+/* harmony export */ });
+// *=========================================
+// ** Cookie Warning  **
+// *=========================================
+
+function cookieWarning() {
+  const cookieBanner = document.querySelector('.cookie-warning-wrapper');
+  const cookieWarningButton = document.querySelector('.cookie-warning-button');
+
+  if (localStorage.getItem('cookieSeen') !== 'shown') {
+    cookieBanner.classList.add('show-cookie-warning');
+  } else {
+    cookieBanner.style.display = 'none';
+  }
+
+  cookieWarningButton.addEventListener(
+    'click',
+    () => {
+      localStorage.setItem('cookieSeen', 'shown');
+      cookieBanner.classList.remove('show-cookie-warning');
+      cookieBanner.addEventListener('transitionend', () => {
+        cookieBanner.style.display = 'none';
+      });
+    },
+    { once: true }
+  );
+}
+
+// *==============================================================================
+// ** Exports  **
+// *==============================================================================
+
+
+
+
 /***/ })
 /******/ 	]);
 /************************************************************************/
@@ -11985,6 +12028,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var flickity_imagesloaded__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(18);
 /* harmony import */ var flickity_imagesloaded__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(flickity_imagesloaded__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _animations__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(20);
+/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(26);
 // *==============================================================================
 // ** Imports  **
 // *==============================================================================
@@ -11996,6 +12040,8 @@ __webpack_require__.r(__webpack_exports__);
 // *==============================================================================
 // ** Imported  **
 // *==============================================================================
+
+
 
 
 // *==============================================================================
@@ -12019,6 +12065,9 @@ const flkty = new flickity__WEBPACK_IMPORTED_MODULE_0__(carousel, {
 
 // ********** Animations **********
 (0,_animations__WEBPACK_IMPORTED_MODULE_2__.addMenuListener)();
+
+// ********** Utils **********
+(0,_utils__WEBPACK_IMPORTED_MODULE_3__.cookieWarning)();
 
 
 }();

@@ -3,6 +3,7 @@
 // *==============================================================================
 
 import { addMenuListener } from './animations';
+import { cookieWarning } from './utils';
 
 // *=========================================
 // ** Imports  **
@@ -10,3 +11,6 @@ import { addMenuListener } from './animations';
 
 // ********** Animations **********
 addMenuListener();
+
+// ********** Utils **********
+cookieWarning();
