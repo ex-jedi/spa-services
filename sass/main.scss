@@ -243,6 +243,18 @@ a {
   height: 75px;
   width: 75px;
   cursor: pointer;
+
+  @include breakpoint(1100) {
+    top: unset;
+    bottom: 100px;
+    right: 50%;
+    transform: translateX(50%) !important;
+  }
+
+  @include breakpoint(750) {
+    width: 50px;
+    height: 50px;
+  }
 }
 
 .sideways-text {
@@ -287,6 +299,10 @@ a {
 
   &:not(:last-of-type) {
     margin-bottom: $paragraph-spacing-medium;
+  }
+
+  @include breakpoint(1100) {
+    font-size: $font-size-medium;
   }
 }
 
