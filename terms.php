@@ -1,11 +1,9 @@
-<?php include('perch/runtime.php'); ?> <!-- Perch initialisation code -->
+<?php include('perch/runtime.php'); ?>
 <?php perch_layout('heads/main-head'); ?>
-<?php perch_layout('headers/legals-header'); ?>
-<main class="legals terms-and conditions" id="main-content">
-		<?php perch_content('Terms And Conditions'); ?>
+<?php perch_layout('headers/main-header'); ?>
+<main class="main-content pages-main-content error-page-main-content" id="main-content">
+	  <?php perch_content('Page Content'); ?>
 </main>
 <?php perch_layout('footers/main-footer'); ?>
 <?php perch_layout('footer-ends/main-footer-end'); ?>
-<!-- TODO: Remove debug -->
-<!-- <?php PerchUtil::output_debug(); ?> -->
 <!-- TODO: Validate HTML -->

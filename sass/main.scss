@@ -81,16 +81,32 @@ h3 {
 h1,
 h2 {
   font-size: $font-size-extra-large;
-  margin: 0 auto var(--heading-spacing);
+  margin: 0 auto $section-spacing-large;
+
+  @include breakpoint(1100) {
+    margin: 0 auto $section-spacing-medium;
+  }
+
+  @include breakpoint(750) {
+    margin: 0 auto $section-spacing-small;
+    font-size: $font-size-large;
+  }
 }
 
 //********** Containers **********
 
+main {
+  margin-bottom: -10px;
+}
+
 section,
 main {
+  top: 0;
+  left: 0;
   position: relative;
   overflow: hidden;
   z-index: 3;
+  width: 100%;
   //TODO: Remove if not needed
   /*
   * Fixes IOS Bug where scrolling breaks z-index
@@ -101,8 +117,18 @@ main {
 
 section {
   // Push sections over due to menu trigger bar
-  margin-left: 100px;
-  padding-block: var(--vertical-section-spacing);
+  margin-left: 60px;
+  padding-block: $section-spacing-large;
+
+  @include breakpoint(1100) {
+    padding-block: $section-spacing-medium;
+    margin-left: 0;
+  }
+
+  @include breakpoint(750) {
+    padding-block: $section-spacing-small;
+    margin-left: 0;
+  }
 }
 
 //********** Paragraphs **********
@@ -119,6 +145,10 @@ p {
 .main-body-font {
   font-size: $font-size-medium;
   font-weight: 400;
+
+  @include breakpoint(750) {
+    font-size: $font-size-small;
+  }
 }
 
 // *=========================================
@@ -159,6 +189,11 @@ a {
   margin: 0 auto;
 }
 
+.main-logo {
+  border-bottom: 10px solid $background-colour-two;
+  padding-bottom: 10px;
+}
+
 // *=========================================
 // ** Main Nav  **
 // *=========================================
@@ -175,6 +210,19 @@ a {
   width: 100px;
   z-index: 4;
   border-right: 3px solid $font-colour-light;
+
+  @include breakpoint(1100) {
+    justify-content: center;
+    align-items: center;
+    top: unset;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: auto;
+    width: 100%;
+    border-right: 0;
+    border-top: 3px solid $font-colour-light;
+  }
 }
 
 .main-nav-trigger {
@@ -185,6 +233,33 @@ a {
   padding: 25px;
   width: fit-content;
   height: fit-content;
+
+  @include breakpoint(750) {
+    padding: 12.5px;
+  }
+}
+
+.main-nav-closer {
+  position: absolute;
+  top: 10rem;
+  right: 10rem;
+  background-color: transparent;
+  border: 0;
+  height: 75px;
+  width: 75px;
+  cursor: pointer;
+
+  @include breakpoint(1100) {
+    top: unset;
+    bottom: 100px;
+    right: 50%;
+    transform: translateX(50%) !important;
+  }
+
+  @include breakpoint(750) {
+    width: 50px;
+    height: 50px;
+  }
 }
 
 .sideways-text {
@@ -194,10 +269,53 @@ a {
   font-size: $font-size-medium;
   color: $font-colour-dark;
   font-weight: 700;
+
+  @include breakpoint(1100) {
+    writing-mode: horizontal-tb;
+    text-orientation: upright;
+    transform: rotate(0deg);
+    left: 0;
+  }
+
+  @include breakpoint(750) {
+    font-size: $font-size-small;
+  }
 }
 
 .main-nav {
-  display: none;
+  @include flex(column);
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  background-color: $background-colour-two;
+  position: fixed;
+  inset: 0;
+  transform: translateX(-100%);
+  z-index: 5;
+}
+
+.main-nav-link {
+  font-size: $font-size-large;
+  text-decoration: none;
+  transform: translateY(100px);
+  color: $font-colour-dark;
+  opacity: 0;
+
+  &:not(:last-of-type) {
+    margin-bottom: $paragraph-spacing-medium;
+  }
+
+  @include breakpoint(1100) {
+    font-size: $font-size-medium;
+  }
+}
+
+#main-nav-current {
+  color: $link-colour;
+  text-decoration: underline;
+  // pointer-events: none;
+  cursor: not-allowed;
 }
 
 //********** Responsive Styles **********
@@ -211,9 +329,29 @@ a {
 // *=========================================
 
 .main-contact-form-section {
-  padding-inline: var(--horizontal-section-spacing);
+  padding-inline: $section-spacing-super-large;
   background-color: $background-colour-two;
   color: $font-colour-dark;
+
+  @include breakpoint(1600) {
+    padding-inline: $section-spacing-extra-large;
+  }
+
+  @include breakpoint(1300) {
+    padding-inline: $section-spacing-large;
+  }
+
+  @include breakpoint(1100) {
+    padding-inline: $section-spacing-medium;
+  }
+
+  @include breakpoint(1100) {
+    padding-inline: $section-spacing-small;
+  }
+
+  @include breakpoint(750) {
+    padding-inline: $section-spacing-super-tiny;
+  }
 }
 
 .main-contact-form {
@@ -235,12 +373,28 @@ textarea {
   justify-content: flex-start;
   align-items: flex-end;
   margin-bottom: $section-spacing-small;
+
+  @include breakpoint(1100) {
+    @include flex(column);
+    align-items: flex-start;
+    margin-bottom: $section-spacing-smaller;
+  }
+
+  @include breakpoint(750) {
+    margin-bottom: $section-spacing-tiny;
+  }
 }
 
 label {
   font-size: $font-size-medium;
   font-weight: 700;
   margin-right: 10px;
+
+  @include breakpoint(750) {
+    font-size: $font-size-small;
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
 }
 
 input {
@@ -251,6 +405,12 @@ input {
   border-left: 0;
   border-bottom: 3px solid $font-colour-dark;
   font-size: $font-size-medium;
+  width: 100%;
+  border-radius: 0;
+
+  @include breakpoint(750) {
+    font-size: $font-size-small;
+  }
 }
 
 .text-area-input-wrapper {
@@ -258,7 +418,7 @@ input {
 }
 
 .text-area-input {
-  margin-top: -1px;
+  margin-top: -5px;
   color: $font-colour-dark;
   width: 100%;
   background-color: $background-colour-two;
@@ -283,6 +443,10 @@ input {
     $background-colour-two,
     $background-colour-two
   );
+
+  @include breakpoint(750) {
+    font-size: $font-size-small;
+  }
 }
 
 .submit-wrapper {
@@ -299,6 +463,19 @@ input {
   text-transform: uppercase;
   font-weight: 700;
   appearance: none;
+}
+
+//********** Success **********
+.success {
+  @include flex(column);
+  justify-content: center;
+  align-items: center;
+  font-size: $font-size-large;
+  text-align: center;
+
+  @include breakpoint(750) {
+    font-size: $font-size-medium;
+  }
 }
 
 //********** Honeypot **********
@@ -319,6 +496,67 @@ input {
 // ** Footer  **
 // *=========================================
 
+.main-footer {
+  background-color: $background-colour-dark;
+  color: $font-colour-light;
+  font-size: $font-size-small;
+  font-weight: 400;
+  padding: $section-spacing-large $section-spacing-super-large;
+  margin: 0 0 0 100px;
+
+  a {
+    color: inherit;
+  }
+
+  p {
+    margin-bottom: $paragraph-spacing-small;
+    text-align: center;
+  }
+
+  div {
+    @include flex(column);
+    align-items: center;
+    &:not(:last-of-type) {
+      margin-bottom: $section-spacing-small;
+    }
+  }
+
+  @include breakpoint(1300) {
+    padding: $section-spacing-large $section-spacing-extra-large;
+  }
+
+  @include breakpoint(1100) {
+    padding: $section-spacing-medium;
+    margin: 0;
+
+    div {
+      &:not(:last-of-type) {
+        margin-bottom: $section-spacing-smaller;
+      }
+    }
+  }
+
+  @include breakpoint(900) {
+    padding: $section-spacing-medium $section-spacing-small;
+    margin: 0;
+  }
+
+  @include breakpoint(900) {
+    padding: $section-spacing-small $section-spacing-super-tiny;
+    margin: 0;
+  }
+
+  @include breakpoint(750) {
+    font-size: $font-size-extra-small;
+
+    div {
+      &:not(:last-of-type) {
+        margin-bottom: $section-spacing-tiny;
+      }
+    }
+  }
+}
+
 //*=========================================
 //** Cookie Warning **
 //*=========================================
@@ -334,10 +572,12 @@ input {
   padding: 1rem;
   font-size: 30px;
   //TODO: Add variables for cookie warning colour
-  background-color: #fff;
+  background-color: $background-colour-three;
   opacity: 0;
   z-index: 10;
   transition: all 0.5s 0.25s;
+  font-weight: 400;
+  border: 3px solid $background-colour-light;
 
   @include breakpoint(1100) {
     font-size: 20px;
@@ -351,7 +591,7 @@ input {
 .cookie-warning-paragraph {
   //TODO: Add variables for cookie warning spacing
   margin: 0 $section-spacing-large 0 0;
-  color: #000;
+  color: $font-colour-light;
 
   @include breakpoint(1300) {
     //TODO: Add variables for cookie warning spacing
@@ -374,8 +614,8 @@ input {
   //TODO: Add variables for cookie warning spacing & colour
 
   background-color: transparent;
-  border: 2px solid #000;
-  color: #000;
+  border: 2px solid $font-colour-light;
+  color: $font-colour-light;
   font-size: inherit;
   padding: 5px 20px;
   width: fit-content;
@@ -385,6 +625,20 @@ input {
 
 .cookie-warning-wrapper.show-cookie-warning {
   opacity: 1;
+}
+
+//*=========================================
+//** animations **
+//*=========================================
+
+.simple-fade-up {
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+.simple-fade-right {
+  opacity: 0;
+  transform: translateX(-40px);
 }
 
 //*=========================================
@@ -405,7 +659,7 @@ input {
 .show-on-focus {
   position: absolute;
   color: $font-colour-dark;
-  background-color: $background-colour-light;
+  background-color: $background-colour-one;
   padding: 10px;
   //TODO: Add font size variable
   font-size: 30px;
@@ -423,24 +677,6 @@ input {
     width: auto;
     height: auto;
     clip: auto;
-  }
-}
-
-//* Hides outline unless tab key is pressed
-
-body:not(.user-is-tabbing) button:focus,
-body:not(.user-is-tabbing) input:focus,
-body:not(.user-is-tabbing) select:focus,
-body:not(.user-is-tabbing) textarea:focus {
-  outline: none;
-}
-
-.user-is-tabbing {
-  a:focus,
-  button:focus,
-  input:focus,
-  textarea:focus {
-    outline: 3px dashed #ff5e00;
   }
 }
 

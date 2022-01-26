@@ -85,6 +85,7 @@
 $header-spacing-large: 10rem;
 $header-spacing-medium: 7.5rem;
 $header-spacing-small: 5rem;
+$header-spacing-tiny: 2.5rem;
 
 //* Headings
 
@@ -101,6 +102,9 @@ $section-spacing-extra-large: 30rem;
 $section-spacing-large: 20rem;
 $section-spacing-medium: 15rem;
 $section-spacing-small: 10rem;
+$section-spacing-smaller: 7.5rem;
+$section-spacing-tiny: 5rem;
+$section-spacing-super-tiny: 2.5rem;
 
 //* Paragraphs
 
@@ -115,25 +119,6 @@ $font-size-extra-small: 1.6rem;
 $paragraph-spacing-large: 5rem;
 $paragraph-spacing-medium: 2.5rem;
 $paragraph-spacing-small: 1.25rem;
-
-//********** Vertical and horizontal spacing **********
-
-:root {
-  // Sections
-  --vertical-section-spacing: #{$section-spacing-large};
-  --horizontal-section-spacing: #{$section-spacing-super-large};
-
-  // Headings
-  --heading-spacing: #{$heading-spacing-large};
-
-  @include breakpoint(1500) {
-    --vertical-spacing: #{$section-spacing-medium};
-  }
-
-  @include breakpoint(700) {
-    --vertical-spacing: #{$section-spacing-small};
-  }
-}
 
 //*=========================================
 //** Colours  **

@@ -1,8 +1,20 @@
 // *==============================================================================
-// ** Imports  **
+// ** Imported  **
 // *==============================================================================
 
-import { displayInstagramFeed } from './utils';
+import { addMenuListener, simpleFadeUp, simpleFadeRight, scrollTriggerRefresh } from './animations';
+import { cookieWarning, consoleGreeting } from './utils';
 
-// ********** Instagram Feed **********
-displayInstagramFeed();
+// *=========================================
+// ** Imports  **
+// *=========================================
+
+// ********** Animations **********
+addMenuListener();
+simpleFadeUp();
+simpleFadeRight();
+scrollTriggerRefresh();
+
+// ********** Utils **********
+cookieWarning();
+consoleGreeting();

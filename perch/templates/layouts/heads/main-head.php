@@ -17,8 +17,8 @@
 											'add-trailing-slash' => false,
 											'include-domain'     => true,
 									), true);
-	$mainsitename      = "XXXX";
-	$pagetitlename = " - XXXX";
+	$mainsitename      = "Spa Service";
+	$pagetitlename = " - Spa Service";
 	$sharing_image = '/images/default-sharing-image.png';
 
 	PerchSystem::set_var('domain',$domain);

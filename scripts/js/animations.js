@@ -8,192 +8,163 @@
 import { gsap } from 'gsap';
 import { CSSRulePlugin } from 'gsap/CSSRulePlugin';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { DrawSVGPlugin } from 'gsap/DrawSVGPlugin';
-import { SplitText } from 'gsap/SplitText';
-
 
 // *=========================================
 // ** GSAP  **
 // *=========================================
 
+// TODO: Delete if not using
 gsap.registerPlugin(CSSRulePlugin, ScrollTrigger);
 
 // *=========================================
 // ** Main Nav  **
 // *=========================================
 
-const mainNavTriggerWrapper = document.querySelector('.main-nav-trigger-wrapper');
-const mainNavTrigger = document.querySelector('.main-nav-trigger');
-const mainNav = document.querySelector('.main-nav');
-const navLink = document.querySelectorAll('.main-nav-link');
+// Media query for menu
+const mediaElevenHundred = window.matchMedia('(max-width: 1100px)');
 
-// Restore pointerevents
-function pointerEventsRestore() {
-  mainNavTrigger.style.pointerEvents = 'auto';
-  if (mainNav.dataset.state === 'open') {
-    mainNavTrigger.textContent = 'CLOSE MENU';
-    mainNavTrigger.style.padding = '0';
-  } else {
-    mainNavTrigger.textContent = 'MENU';
-    mainNavTrigger.style.padding = '0 5rem';
-    // Stripping out styles injected by GreenSock to show normal menu if screen is resized
-    mainNav.removeAttribute('style');
-    navLink.forEach((link) => link.removeAttribute('style'));
-  }
+// match media for nav animation timing
+const mediaSevenFifty = window.matchMedia('(max-width: 750px)');
+
+// Change trigger points on screen size
+let navAnimDuration = 0.8;
+if (mediaSevenFifty.matches) {
+  navAnimDuration = 0.5;
 }
 
-// * Open menu
+// Nav elements
+function getNavElements() {
+  const mainNav = document.querySelector('.main-nav');
+  const mainNavLinks = gsap.utils.toArray(document.querySelectorAll('.main-nav-link'));
+  const mainNavTrigger = document.querySelector('.main-nav-trigger');
+  const mainNavCloser = document.querySelector('.main-nav-closer');
 
-const openMenuTl = gsap.timeline({
-  paused: true,
-  defaults: { ease: 'power3.out', duration: 1, delay: 0 },
-});
-
-openMenuTl
-  .to(mainNav, { y: '0%' })
-  .addLabel('colorChange', '-=0.3')
-  .to(navLink, { y: 0, opacity: 1, stagger: 0.2, duration: 0.5 }, 'colorChange')
-  .to(mainNavTriggerWrapper, { backgroundColor: '#f4f1f0' }, 'colorChange')
-  .to(mainNavTrigger, { color: '#6c9184', onComplete: pointerEventsRestore }, 'colorChange');
-
-// * Close menu
-
-const closeMenuTl = gsap.timeline({
-  paused: true,
-  defaults: { ease: 'power3.in', duration: 1, delay: 0 },
-});
-
-closeMenuTl
-  .to(navLink, { y: 40, opacity: 0, stagger: -0.2, duration: 0.5 })
-  .addLabel('colorChange', '-=0.5')
-  .to(mainNavTriggerWrapper, { backgroundColor: '#6c9184' }, 'colorChange')
-  .to(mainNavTrigger, { color: '#f4f1f0' }, 'colorChange')
-  .to(mainNav, { y: '120%', onComplete: pointerEventsRestore }, 'colorChange');
-
-function menuOpenerHandler() {
-  if (mainNav.dataset.state === 'closed') {
-    openMenuTl.restart();
-    mainNavTrigger.style.pointerEvents = 'none';
-    mainNav.dataset.state = 'open';
-  } else {
-    closeMenuTl.restart();
-    mainNavTrigger.style.pointerEvents = 'none';
-    mainNav.dataset.state = 'closed';
-  }
+  return { mainNav, mainNavLinks, mainNavTrigger, mainNavCloser };
 }
 
-// *==============================================================================
-// ** GSAP Animations For Multiple Pages  **
-// *==============================================================================
+// * Open Menu
+
+function menuOpenAnimation(startPosition, endPosition) {
+  const { mainNav, mainNavLinks, mainNavCloser } = getNavElements();
+
+  const openMenuTl = gsap.timeline({
+    paused: true,
+    // onComplete: navTextPointerEvents,
+    defaults: { ease: 'power2.in', duration: navAnimDuration, delay: 0 },
+  });
+
+  return openMenuTl
+    .addLabel('start')
+    .fromTo(mainNav, startPosition, endPosition, 'start')
+    .to(mainNavCloser, { rotate: 180 }, 'start')
+    .to(mainNavLinks, { y: '0%', opacity: 1, stagger: 0.1 }, '-=25%');
+}
+
+function navOpenerHandler() {
+  let beginning = { x: '-100%', y: 0 };
+  let end = { x: '0%', y: '0%' };
+  if (mediaElevenHundred.matches) {
+    beginning = { x: '0%', y: '100%' };
+    end = { y: '0%', x: '0%' };
+  }
+  menuOpenAnimation(beginning, end).play();
+}
+
+// * Close Menu
+
+function closeMenuAnimation() {
+  let endPosition = { x: '-100%', y: '0%' };
+  if (mediaElevenHundred.matches) {
+    endPosition = { y: '100%', x: '0%' };
+  }
+  const { mainNav, mainNavLinks, mainNavCloser } = getNavElements();
+  const closeMenuTl = gsap.timeline({
+    paused: true,
+    defaults: { ease: 'power2.out', duration: navAnimDuration, delay: 0 },
+  });
+
+  return closeMenuTl
+    .to(mainNavLinks, { y: 100, opacity: 0, stagger: { each: 0.15, from: 'end' } })
+    .addLabel('end')
+    .to(mainNav, endPosition, 'end-=60%')
+    .to(mainNavCloser, { rotate: -180 }, 'end-=60%');
+}
+
+function navCloserHandler() {
+  closeMenuAnimation().play();
+}
+
+function addMenuListener() {
+  const { mainNavTrigger, mainNavCloser } = getNavElements();
+  mainNavTrigger.addEventListener('click', navOpenerHandler);
+  mainNavCloser.addEventListener('click', navCloserHandler);
+}
 
 // *=========================================
-// ** Fading in paragraphs  **
+// ** Simple Fade Up  **
 // *=========================================
 
-function fadeInRotateParagraphs() {
-  // * Adding class to paragraphs created by Perch to set them up for fading in.
-  // Grabbing paragraphs from multiple pages
-  const aboutMeParagraphs = Array.from(document.querySelectorAll('.about-me-section p'));
-  const servicesParagraphs = Array.from(document.querySelectorAll('.services-section p'));
-  // Merge the paragraphs into one array
-  const fadeInParagraph = [...aboutMeParagraphs, ...servicesParagraphs];
-  // Add class to paragraphs
-  fadeInParagraph.forEach((paragraph) => paragraph.classList.add('fade-in-rotate'));
+const responsiveCheck = window.matchMedia('(max-width: 1000px)');
 
-  // Grabbing all paragraphs to fade in
-  const fadeInParagraphs = gsap.utils.toArray('.fade-in-rotate');
+let triggerPoint = 'top 75%';
+if (responsiveCheck.matches) {
+  triggerPoint = 'top 90%';
+}
 
-  fadeInParagraphs.forEach((paragraph) => {
-    ScrollTrigger.matchMedia({
-      // desktop
-      '(min-width: 1100px)': function () {
-        ScrollTrigger.create({
-          trigger: paragraph,
-          toggleClass: 'fade-in-rotate-reveal',
-          start: 'top 95%',
-          end: 'bottom top',
-        });
-      },
-
-      // Tablet
-      '(max-width: 1099px) and (min-width: 700px)': function () {
-        ScrollTrigger.create({
-          trigger: paragraph,
-          toggleClass: 'fade-in-rotate-reveal',
-          start: 'top bottom',
-          end: 'bottom -100px',
-        });
-      },
-
-      // Mobile
-      '(max-width: 699px) and (min-width: 450px)': function () {
-        ScrollTrigger.create({
-          trigger: paragraph,
-          toggleClass: 'fade-in-rotate-reveal',
-          start: 'top bottom',
-          end: 'bottom -300px',
-        });
-      },
-
-      // Small Mobile
-      '(max-width: 449px)': function () {
-        ScrollTrigger.create({
-          trigger: paragraph,
-          toggleClass: 'fade-in-rotate-reveal',
-          start: 'top bottom',
-          end: 'bottom -450px',
-        });
-      },
+function simpleFadeUp() {
+  const fadeUp = gsap.utils.toArray(document.querySelectorAll('.simple-fade-up'));
+  fadeUp.forEach((elem) => {
+    gsap.set(elem, { opacity: 0, y: 40 });
+    ScrollTrigger.create({
+      trigger: elem,
+      start: triggerPoint,
+      end: 'bottom 10%',
+      once: true,
+      id: 'Simple Fade Up',
+      // markers: true,
+      onEnter: () => gsap.to(elem, { delay: 0.2, opacity: 1, y: 0, duration: 0.6, ease: 'power3.inOut' }),
     });
   });
 }
 
-// *=========================================
-// ** Contact form color change  **
-// *=========================================
-
-function scrollColourChange() {
-  ScrollTrigger.create({
-    trigger: '.general-contact-form-section',
-    start: 'top center',
-    end: 'bottom center',
-    id: 'Contact Form',
-    toggleClass: {
-      targets: '.general-contact-form-section, .general-contact-form-input, .main-contact-submit-button',
-      className: 'contact-form-colour-change',
-    },
+function simpleFadeRight() {
+  const fadeRight = gsap.utils.toArray(document.querySelectorAll('.simple-fade-right'));
+  fadeRight.forEach((elem) => {
+    gsap.set(elem, { opacity: 0, x: -40 });
+    ScrollTrigger.create({
+      trigger: elem,
+      start: triggerPoint,
+      end: 'bottom 10%',
+      once: true,
+      id: 'Simple Fade Right',
+      // markers: true,
+      onEnter: () => gsap.to(elem, { delay: 0.2, opacity: 1, x: 0, duration: 0.6, ease: 'power3.inOut' }),
+    });
   });
 }
 
-// *==============================================================================
-// ** Homepage  **
-// *==============================================================================
+// ********** Scrolltrigger Refresh **********
 
-
-ScrollTrigger.batch('.fade-in-rotate', {
-  start: 'top 98%',
-  markers: true,
-  // interval: 0.1, // time window (in seconds) for batching to occur.
-  // batchMax: 3,   // maximum batch size (targets)
-  onEnter: (batch) => gsap.to(batch, { opacity: 1, rotateX: 0, ease: 'power1.in' }),
-  onLeaveBack: (batch) => gsap.to(batch, { opacity: 0, rotateX: 90, ease: 'power1.in' }),
-  onEnterBack: (batch) => gsap.to(batch, { opacity: 1, rotateX: 0, ease: 'power1.in' }),
-  // you can also define things like start, end, etc.
-});
-
-// ********** Homepage Parallax Image **********
-
-function homepageParallax() {
-  gsap.to('.parallax-image', {
-    yPercent: -30,
-    ease: 'none',
-    scrollTrigger: {
-      trigger: '.parallax-image-section',
-      start: 'top bottom',
-      end: 'bottom',
-      scrub: 0.5,
-    },
+// * ScrollTrigger Refresh
+function scrollTriggerRefresh(time = 1000) {
+  const scrollTriggerRefreshTarget = document.querySelectorAll('.scrolltrigger-refresh-target');
+  window.addEventListener('load', () => {
+    setTimeout(() => {
+      console.log(`✨ ScrollTrigger refresh created after ${time}ms ✨`);
+      scrollTriggerRefreshTarget.forEach((triggerElem) => {
+        ScrollTrigger.create({
+          trigger: triggerElem,
+          start: 'top bottom',
+          once: true,
+          id: 'ScrollTrigger Refresh',
+          // markers: true,
+          onEnter: () => {
+            ScrollTrigger.refresh();
+            console.log('⚡ ScrollTrigger Refresh Triggered ⚡');
+          },
+        });
+      });
+    }, time);
   });
 }
 
@@ -201,4 +172,4 @@ function homepageParallax() {
 // ** Exports  **
 // *=========================================
 
-export { homepageParallax, menuOpenerHandler, mainNavTrigger, scrollColourChange };
+export { addMenuListener, simpleFadeRight, simpleFadeUp, scrollTriggerRefresh };
