@@ -94,7 +94,7 @@
 }
 
 .pages-block-wrapper {
-  padding-bottom: $section-spacing-large;
+  padding-bottom: calc(#{$section-spacing-large} + 50px);
   color: $font-colour-dark;
 
   &:nth-child(odd) {
@@ -114,7 +114,11 @@
   }
 
   @include breakpoint(1100) {
-    padding-bottom: $section-spacing-medium;
+    padding-bottom: calc(#{$section-spacing-medium} + 50px);
+  }
+
+  @include breakpoint(750) {
+    padding-bottom: calc(#{$section-spacing-small} + 50px);
   }
 }
 
@@ -125,6 +129,10 @@
   @include breakpoint(1100) {
     margin-bottom: $section-spacing-smaller;
   }
+
+  @include breakpoint(750) {
+    margin-bottom: $section-spacing-tiny;
+  }
 }
 
 .block-textwrapper {
@@ -132,6 +140,10 @@
 
   @include breakpoint(1100) {
     margin-bottom: $section-spacing-smaller;
+  }
+
+  @include breakpoint(750) {
+    margin-bottom: $section-spacing-tiny;
   }
 }
 
