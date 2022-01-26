@@ -112,8 +112,8 @@ function simpleFadeUp() {
     gsap.set(elem, { opacity: 0, y: 40 });
     ScrollTrigger.create({
       trigger: elem,
-      start: 'top 80%',
-      end: 'bottom 20%',
+      start: 'top 70%',
+      end: 'bottom 10%',
       once: true,
       id: 'Simple Fade Up',
       markers: true,
