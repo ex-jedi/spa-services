@@ -101,6 +101,48 @@ function addMenuListener() {
 }
 
 // *=========================================
+// ** Simple Fade Up  **
+// *=========================================
+
+function simpleFadeUp() {
+  const fadeUp = gsap.utils.toArray(document.querySelectorAll('.simple-fade-up'));
+  console.log(fadeUp);
+
+  fadeUp.forEach((elem) => {
+    gsap.set(elem, { opacity: 0, y: 40 });
+    ScrollTrigger.create({
+      trigger: elem,
+      start: 'top 80%',
+      end: 'bottom 20%',
+      once: true,
+      id: 'Simple Fade Up',
+      markers: true,
+      onEnter: () => gsap.to(elem, { delay: 0.2, opacity: 1, y: 0, duration: 0.5 }),
+    });
+  });
+}
+
+function simpleFadeRight() {
+  const fadeRight = gsap.utils.toArray(document.querySelectorAll('.simple-fade-right'));
+  console.log(fadeRight);
+
+  fadeRight.forEach((elem) => {
+    gsap.set(elem, { opacity: 0, x: -40 });
+    ScrollTrigger.create({
+      trigger: elem,
+      start: 'top 80%',
+      end: 'bottom 20%',
+      once: true,
+      id: 'Simple Fade Up',
+      markers: true,
+      onEnter: () => gsap.to(elem, { delay: 0.2, opacity: 1, x: 0, duration: 0.5 }),
+    });
+  });
+}
+
+simpleFadeRight();
+simpleFadeUp();
+// *=========================================
 // ** Exports  **
 // *=========================================
 

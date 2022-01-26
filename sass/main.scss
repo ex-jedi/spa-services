@@ -628,6 +628,20 @@ input {
 }
 
 //*=========================================
+//** animations **
+//*=========================================
+
+.simple-fade-up {
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+.simple-fade-right {
+  opacity: 0;
+  transform: translateX(-40px);
+}
+
+//*=========================================
 //** Utility & Accessibility  **
 //*=========================================
 
@@ -645,7 +659,7 @@ input {
 .show-on-focus {
   position: absolute;
   color: $font-colour-dark;
-  background-color: $background-colour-light;
+  background-color: $background-colour-one;
   padding: 10px;
   //TODO: Add font size variable
   font-size: 30px;
@@ -663,24 +677,6 @@ input {
     width: auto;
     height: auto;
     clip: auto;
-  }
-}
-
-//* Hides outline unless tab key is pressed
-
-body:not(.user-is-tabbing) button:focus,
-body:not(.user-is-tabbing) input:focus,
-body:not(.user-is-tabbing) select:focus,
-body:not(.user-is-tabbing) textarea:focus {
-  outline: none;
-}
-
-.user-is-tabbing {
-  a:focus,
-  button:focus,
-  input:focus,
-  textarea:focus {
-    outline: 3px dashed #ff5e00;
   }
 }
 
