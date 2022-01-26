@@ -21,7 +21,7 @@ import { cookieWarning } from './utils';
 const carousel = document.querySelector('.homepage-gallery');
 const flkty = new Flickity(carousel, {
   imagesLoaded: true,
-  autoPlay: 1000,
+  autoPlay: 6000,
   prevNextButtons: false,
   wrapAround: true,
   selectedAttraction: 0.006,
