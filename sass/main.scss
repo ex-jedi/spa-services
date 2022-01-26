@@ -59,7 +59,7 @@ body {
   margin: 0 auto;
   position: relative;
   min-width: 320px;
-  max-width: 1920px;
+  max-width: 2500px;
   overflow-x: hidden;
   @include main-font-stack;
   background-color: $background-colour-light;
@@ -116,9 +116,12 @@ main {
 }
 
 section {
-  // Push sections over due to menu trigger bar
-  margin-left: 60px;
   padding-block: $section-spacing-large;
+
+  @include breakpoint(2500) {
+    // Push sections over due to menu trigger bar
+    margin-left: 60px;
+  }
 
   @include breakpoint(1100) {
     padding-block: $section-spacing-medium;
@@ -502,7 +505,10 @@ input {
   font-size: $font-size-small;
   font-weight: 400;
   padding: $section-spacing-large $section-spacing-super-large;
-  margin: 0 0 0 100px;
+
+  @include breakpoint(2500) {
+    margin: 0 0 0 100px;
+  }
 
   a {
     color: inherit;
