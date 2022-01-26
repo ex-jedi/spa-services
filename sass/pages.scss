@@ -73,7 +73,8 @@
   margin-left: 80px;
 
   @include breakpoint(1600) {
-    padding: $section-spacing-large $section-spacing-extra-large;
+    padding: $section-spacing-large $section-spacing-extra-large
+      calc(#{$section-spacing-large} + 50px);
   }
 
   @include breakpoint(1300) {
@@ -81,12 +82,9 @@
   }
 
   @include breakpoint(1100) {
-    padding: $section-spacing-medium;
+    padding: $section-spacing-medium $section-spacing-small
+      calc(#{$section-spacing-medium} + 50px);
     margin-left: 0;
-  }
-
-  @include breakpoint(1100) {
-    padding: $section-spacing-medium $section-spacing-small;
   }
 
   @include breakpoint(750) {
