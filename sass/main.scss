@@ -107,21 +107,12 @@ main {
   overflow: hidden;
   z-index: 3;
   width: 100%;
-  //TODO: Remove if not needed
-  /*
-  * Fixes IOS Bug where scrolling breaks z-index
-  https://stackoverflow.com/questions/16033416/while-scrolling-on-an-ios-device-the-z-index-of-elements-isnt-working
-  */
-  -webkit-transform: translate3d(0, 0, 0);
 }
 
 section {
   padding-block: $section-spacing-large;
-
-  @include breakpoint(2500) {
-    // Push sections over due to menu trigger bar
-    margin-left: 60px;
-  }
+  // Push sections over due to menu trigger bar
+  margin-left: 100px;
 
   @include breakpoint(1100) {
     padding-block: $section-spacing-medium;
@@ -187,12 +178,21 @@ a {
 
 //********** Main Logo **********
 .main-logo-wrapper {
-  width: 155px;
+  @include flex(column);
+  justify-content: center;
+  align-items: center;
   height: auto;
-  margin: 0 auto;
+  margin: 0 auto 0 100px;
+  width: calc(100% - 100px);
+
+  @include breakpoint(1100) {
+    width: 100%;
+    margin: 0 auto;
+  }
 }
 
 .main-logo {
+  width: 155px;
   border-bottom: 10px solid $background-colour-two;
   padding-bottom: 10px;
 }
@@ -237,8 +237,8 @@ a {
   width: fit-content;
   height: fit-content;
 
-  @include breakpoint(750) {
-    padding: 12.5px;
+  @include breakpoint(1100) {
+    padding: $paragraph-spacing-small;
   }
 }
 
@@ -335,6 +335,7 @@ a {
   padding-inline: $section-spacing-super-large;
   background-color: $background-colour-two;
   color: $font-colour-dark;
+  width: calc(100% - 100px);
 
   @include breakpoint(1600) {
     padding-inline: $section-spacing-extra-large;
@@ -346,6 +347,7 @@ a {
 
   @include breakpoint(1100) {
     padding-inline: $section-spacing-medium;
+    width: 100%;
   }
 
   @include breakpoint(1100) {
@@ -460,12 +462,19 @@ input {
 
 .submit {
   border: 3px solid $font-colour-dark;
+  background-color: $background-colour-two;
   margin: 0 auto;
   width: fit-content;
   padding: 0 $font-size-extra-small;
   text-transform: uppercase;
   font-weight: 700;
   appearance: none;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background-color: $background-colour-three;
+    color: $font-colour-light;
+  }
 }
 
 //********** Success **********
@@ -506,9 +515,7 @@ input {
   font-weight: 400;
   padding: $section-spacing-large $section-spacing-super-large;
 
-  @include breakpoint(2500) {
-    margin: 0 0 0 100px;
-  }
+  margin: 0 0 0 100px;
 
   a {
     color: inherit;
@@ -553,8 +560,6 @@ input {
   }
 
   @include breakpoint(750) {
-    font-size: $font-size-extra-small;
-
     div {
       &:not(:last-of-type) {
         margin-bottom: $section-spacing-tiny;
@@ -577,7 +582,6 @@ input {
   width: 100%;
   padding: 1rem;
   font-size: 30px;
-  //TODO: Add variables for cookie warning colour
   background-color: $background-colour-three;
   opacity: 0;
   z-index: 10;
@@ -591,23 +595,21 @@ input {
 
   @include breakpoint(850) {
     @include flex(column);
+    padding: $paragraph-spacing-medium;
   }
 }
 
-.cookie-warning-paragraph {
-  //TODO: Add variables for cookie warning spacing
+p.cookie-warning-paragraph {
   margin: 0 $section-spacing-large 0 0;
   color: $font-colour-light;
 
   @include breakpoint(1300) {
-    //TODO: Add variables for cookie warning spacing
     margin: 0 $paragraph-spacing-large 0 0;
   }
 
   @include breakpoint(850) {
     text-align: center;
-    //TODO: Add variables for cookie warning spacing
-    margin: 0 0 $paragraph-spacing-large;
+    margin: 0 1rem;
   }
 }
 
@@ -617,16 +619,27 @@ input {
 }
 
 .cookie-warning-button {
-  //TODO: Add variables for cookie warning spacing & colour
-
   background-color: transparent;
-  border: 2px solid $font-colour-light;
+  border: 3px solid $font-colour-light;
   color: $font-colour-light;
+  @include heading-font-stack;
   font-size: inherit;
-  padding: 5px 20px;
+  font-weight: 700;
+  padding: $paragraph-spacing-small $paragraph-spacing-medium;
   width: fit-content;
   flex: 0 0 auto;
   text-align: center;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background-color: $background-colour-two;
+    color: $font-colour-dark;
+  }
+
+  @include breakpoint(850) {
+    margin: $paragraph-spacing-medium auto 0;
+    padding: $paragraph-spacing-small $paragraph-spacing-large;
+  }
 }
 
 .cookie-warning-wrapper.show-cookie-warning {

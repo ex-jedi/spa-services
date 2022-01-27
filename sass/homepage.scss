@@ -14,13 +14,14 @@
 
 .header-content {
   padding: $header-spacing-large $header-spacing-large 0;
-
+  margin-left: 100px;
+  width: calc(100% - 100px);
   @include breakpoint(1600) {
-    margin-left: 100px;
   }
 
   @include breakpoint(1100) {
     padding: $header-spacing-medium $header-spacing-large 0;
+    width: 100%;
     margin-left: 0;
   }
 
@@ -105,6 +106,11 @@
   @include flex(column);
   background-color: $background-colour-one;
   padding-bottom: 0;
+  width: calc(100% - 100px);
+
+  @include breakpoint(1100) {
+    width: 100%;
+  }
 }
 
 .homepage-services-flex-wrapper {
@@ -197,12 +203,23 @@
   background-color: $background-colour-one;
   padding-block-start: 0;
   height: auto;
+  margin-left: 100px;
+  width: calc(100% - 100px);
+
+  @include breakpoint(1100) {
+    margin-left: 0;
+    width: 100%;
+  }
 }
 
 .homepage-gallery-image-wrapper {
   margin-inline: $paragraph-spacing-large;
   height: auto;
   margin-block-end: $paragraph-spacing-medium;
+
+  @include breakpoint(1100) {
+    width: 95vw;
+  }
 }
 
 .homepage-gallery-image {
