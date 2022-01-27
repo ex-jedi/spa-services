@@ -106,6 +106,10 @@
   background-color: $background-colour-one;
   padding-bottom: 0;
   width: calc(100% - 60px);
+
+  @include breakpoint(1100) {
+    width: 100%;
+  }
 }
 
 .homepage-services-flex-wrapper {

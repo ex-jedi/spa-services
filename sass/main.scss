@@ -237,8 +237,8 @@ a {
   width: fit-content;
   height: fit-content;
 
-  @include breakpoint(750) {
-    padding: 12.5px;
+  @include breakpoint(1100) {
+    padding: $paragraph-spacing-small;
   }
 }
 
