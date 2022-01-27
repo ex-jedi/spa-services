@@ -32,7 +32,8 @@ function cookieWarning() {
 // Prevents click on current nav link
 function currentNav() {
   const currentLink = document.querySelector('#main-nav-current');
-  currentLink.addEventListener('click', (e) => e.preventDefault());
+
+  if (currentLink) currentLink.addEventListener('click', (e) => e.preventDefault());
 }
 
 // *=========================================
