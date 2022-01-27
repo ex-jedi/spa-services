@@ -26,6 +26,16 @@ function cookieWarning() {
 }
 
 // *=========================================
+// ** Current Nav Link  **
+// *=========================================
+
+// Prevents click on current nav link
+function currentNav() {
+  const currentLink = document.querySelector('#main-nav-current');
+  currentLink.addEventListener('click', (e) => e.preventDefault());
+}
+
+// *=========================================
 // ** Console Greeting  **
 // *=========================================
 
@@ -39,4 +49,4 @@ function consoleGreeting() {
 // ** Exports  **
 // *==============================================================================
 
-export { cookieWarning, consoleGreeting };
+export { cookieWarning, consoleGreeting, currentNav };

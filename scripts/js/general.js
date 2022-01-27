@@ -3,7 +3,7 @@
 // *==============================================================================
 
 import { addMenuListener, simpleFadeUp, simpleFadeRight, scrollTriggerRefresh } from './animations';
-import { cookieWarning, consoleGreeting } from './utils';
+import { cookieWarning, consoleGreeting, currentNav } from './utils';
 
 // *=========================================
 // ** Imports  **
@@ -18,3 +18,4 @@ scrollTriggerRefresh();
 // ********** Utils **********
 cookieWarning();
 consoleGreeting();
+currentNav();
