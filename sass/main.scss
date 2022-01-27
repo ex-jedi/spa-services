@@ -577,7 +577,6 @@ input {
   width: 100%;
   padding: 1rem;
   font-size: 30px;
-  //TODO: Add variables for cookie warning colour
   background-color: $background-colour-three;
   opacity: 0;
   z-index: 10;
@@ -591,23 +590,21 @@ input {
 
   @include breakpoint(850) {
     @include flex(column);
+    padding: $paragraph-spacing-medium;
   }
 }
 
-.cookie-warning-paragraph {
-  //TODO: Add variables for cookie warning spacing
+p.cookie-warning-paragraph {
   margin: 0 $section-spacing-large 0 0;
   color: $font-colour-light;
 
   @include breakpoint(1300) {
-    //TODO: Add variables for cookie warning spacing
     margin: 0 $paragraph-spacing-large 0 0;
   }
 
   @include breakpoint(850) {
     text-align: center;
-    //TODO: Add variables for cookie warning spacing
-    margin: 0 0 $paragraph-spacing-large;
+    margin: 0 1rem;
   }
 }
 
@@ -617,16 +614,27 @@ input {
 }
 
 .cookie-warning-button {
-  //TODO: Add variables for cookie warning spacing & colour
-
   background-color: transparent;
-  border: 2px solid $font-colour-light;
+  border: 3px solid $font-colour-light;
   color: $font-colour-light;
+  @include heading-font-stack;
   font-size: inherit;
-  padding: 5px 20px;
+  font-weight: 700;
+  padding: $paragraph-spacing-small $paragraph-spacing-medium;
   width: fit-content;
   flex: 0 0 auto;
   text-align: center;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background-color: $background-colour-two;
+    color: $font-colour-dark;
+  }
+
+  @include breakpoint(850) {
+    margin: $paragraph-spacing-medium auto 0;
+    padding: $paragraph-spacing-small $paragraph-spacing-large;
+  }
 }
 
 .cookie-warning-wrapper.show-cookie-warning {

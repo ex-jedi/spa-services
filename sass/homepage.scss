@@ -105,6 +105,7 @@
   @include flex(column);
   background-color: $background-colour-one;
   padding-bottom: 0;
+  width: calc(100% - 60px);
 }
 
 .homepage-services-flex-wrapper {
