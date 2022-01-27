@@ -216,6 +216,10 @@
   margin-inline: $paragraph-spacing-large;
   height: auto;
   margin-block-end: $paragraph-spacing-medium;
+
+  @include breakpoint(1100) {
+    width: 95vw;
+  }
 }
 
 .homepage-gallery-image {

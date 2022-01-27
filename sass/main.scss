@@ -107,17 +107,10 @@ main {
   overflow: hidden;
   z-index: 3;
   width: 100%;
-  //TODO: Remove if not needed
-  /*
-  * Fixes IOS Bug where scrolling breaks z-index
-  https://stackoverflow.com/questions/16033416/while-scrolling-on-an-ios-device-the-z-index-of-elements-isnt-working
-  */
-  -webkit-transform: translate3d(0, 0, 0);
 }
 
 section {
   padding-block: $section-spacing-large;
-
   // Push sections over due to menu trigger bar
   margin-left: 100px;
 
@@ -342,6 +335,7 @@ a {
   padding-inline: $section-spacing-super-large;
   background-color: $background-colour-two;
   color: $font-colour-dark;
+  width: calc(100% - 100px);
 
   @include breakpoint(1600) {
     padding-inline: $section-spacing-extra-large;
@@ -353,6 +347,7 @@ a {
 
   @include breakpoint(1100) {
     padding-inline: $section-spacing-medium;
+    width: 100%;
   }
 
   @include breakpoint(1100) {
