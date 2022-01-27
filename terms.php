@@ -6,4 +6,3 @@
 </main>
 <?php perch_layout('footers/main-footer'); ?>
 <?php perch_layout('footer-ends/main-footer-end'); ?>
-<!-- TODO: Validate HTML -->

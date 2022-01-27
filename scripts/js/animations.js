@@ -13,7 +13,6 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 // ** GSAP  **
 // *=========================================
 
-// TODO: Delete if not using
 gsap.registerPlugin(CSSRulePlugin, ScrollTrigger);
 
 // *=========================================

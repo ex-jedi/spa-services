@@ -680,8 +680,8 @@ p.cookie-warning-paragraph {
   color: $font-colour-dark;
   background-color: $background-colour-one;
   padding: 10px;
-  //TODO: Add font size variable
-  font-size: 30px;
+  font-size: $font-size-medium;
+  font-weight: 400;
   top: 0;
   left: 0;
   width: 1px;
@@ -696,30 +696,6 @@ p.cookie-warning-paragraph {
     width: auto;
     height: auto;
     clip: auto;
-  }
-}
-
-//********** Visually Hidden  **********
-
-.visually-hidden {
-  clip: rect(0 0 0 0);
-  clip-path: inset(50%);
-  height: 1px;
-  overflow: hidden;
-  position: absolute;
-  white-space: nowrap;
-  width: 1px;
-}
-
-//********** Perch Debug **********
-
-//TODO: Remove debug styles
-
-.perch-debug {
-  margin: 100px !important;
-  td,
-  th {
-    font-size: 20px !important;
   }
 }
 
