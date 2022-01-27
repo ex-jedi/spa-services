@@ -15,7 +15,8 @@
 .header-content-wrapper {
   padding: $section-spacing-large $section-spacing-super-large 0;
   color: $font-colour-dark;
-  margin-left: 80px;
+  margin-left: 100px;
+  width: calc(100% - 100px);
 
   @include breakpoint(1600) {
     padding: $section-spacing-large $section-spacing-extra-large 0;
@@ -28,6 +29,7 @@
   @include breakpoint(1100) {
     padding: $section-spacing-medium $section-spacing-medium 0;
     margin: 0;
+    width: 100%;
   }
 
   @include breakpoint(900) {
@@ -70,7 +72,8 @@
   padding: $section-spacing-large $section-spacing-super-large
     calc(#{$section-spacing-large} + 50px);
   background-color: $background-colour-one;
-  margin-left: 80px;
+  margin-left: 100px;
+  width: calc(100% - 100px);
 
   @include breakpoint(1600) {
     padding: $section-spacing-large $section-spacing-extra-large
@@ -85,6 +88,7 @@
     padding: $section-spacing-medium $section-spacing-small
       calc(#{$section-spacing-medium} + 50px);
     margin-left: 0;
+    width: 100%;
   }
 
   @include breakpoint(750) {

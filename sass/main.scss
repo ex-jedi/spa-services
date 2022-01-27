@@ -118,10 +118,8 @@ main {
 section {
   padding-block: $section-spacing-large;
 
-  @include breakpoint(2500) {
-    // Push sections over due to menu trigger bar
-    margin-left: 60px;
-  }
+  // Push sections over due to menu trigger bar
+  margin-left: 100px;
 
   @include breakpoint(1100) {
     padding-block: $section-spacing-medium;
@@ -187,12 +185,21 @@ a {
 
 //********** Main Logo **********
 .main-logo-wrapper {
-  width: 155px;
+  @include flex(column);
+  justify-content: center;
+  align-items: center;
   height: auto;
-  margin: 0 auto;
+  margin: 0 auto 0 100px;
+  width: calc(100% - 100px);
+
+  @include breakpoint(1100) {
+    width: 100%;
+    margin: 0 auto;
+  }
 }
 
 .main-logo {
+  width: 155px;
   border-bottom: 10px solid $background-colour-two;
   padding-bottom: 10px;
 }
@@ -513,9 +520,7 @@ input {
   font-weight: 400;
   padding: $section-spacing-large $section-spacing-super-large;
 
-  @include breakpoint(2500) {
-    margin: 0 0 0 100px;
-  }
+  margin: 0 0 0 100px;
 
   a {
     color: inherit;
