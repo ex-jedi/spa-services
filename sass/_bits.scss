@@ -6,7 +6,6 @@
 //** Media Queries   **
 //*=========================================
 
-//TODO: Delete unused media queries
 
 //********** Max Width **********
 
@@ -15,39 +14,6 @@
     $point: 1px * $point;
   }
   @media (max-width: $point) {
-    @content;
-  }
-}
-
-//********** Min Width **********
-
-@mixin min-breakpoint($point) {
-  @if unitless($point) {
-    $point: 1px * $point;
-  }
-  @media (min-width: $point) {
-    @content;
-  }
-}
-
-//********** Height **********
-
-@mixin height-breakpoint($point) {
-  @if unitless($point) {
-    $point: 1px * $point;
-  }
-  @media (max-height: $point) {
-    @content;
-  }
-}
-
-//********** Width and Orientation **********
-
-@mixin width-orientation-breakpoint($point, $orientation: portrait) {
-  @if unitless($point) {
-    $point: 1px * $point;
-  }
-  @media (max-height: $point) and (orientation: $orientation) {
     @content;
   }
 }
@@ -124,7 +90,6 @@ $paragraph-spacing-small: 1.25rem;
 //** Colours  **
 //*=========================================
 
-//TODO: Customise brand colours
 
 // Main brand Colours
 $background-colour-light: #eef7f3;
@@ -144,12 +109,6 @@ $link-visited: #8608fb;
 //*=========================================
 //** Effects and Animation  **
 //*=========================================
-
-//********** Transition Timings**********
-
-//TODO: Customise Timings
-
-//* Timings
 
 //********** Scrollbar Mixin **********
 
@@ -178,22 +137,4 @@ $link-visited: #8608fb;
     background: $background-colour;
     box-shadow: inset 0 0 3px $track-shadow-colour;
   }
-}
-
-//********** Keyframes **********
-
-//*=========================================
-//** Accessability **
-//*=========================================
-
-//********** Visually Hidden  **********
-
-@mixin visually-hidden {
-  clip: rect(0 0 0 0);
-  clip-path: inset(50%);
-  height: 1px;
-  overflow: hidden;
-  position: absolute;
-  white-space: nowrap;
-  width: 1px;
 }

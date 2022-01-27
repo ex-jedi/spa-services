@@ -9,4 +9,3 @@
 </main>
 <?php perch_layout('footers/main-footer'); ?>
 <?php perch_layout('footer-ends/homepage-footer-end'); ?>
-<!-- TODO: Validate HTML -->

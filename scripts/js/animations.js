@@ -13,7 +13,6 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 // ** GSAP  **
 // *=========================================
 
-// TODO: Delete if not using
 gsap.registerPlugin(CSSRulePlugin, ScrollTrigger);
 
 // *=========================================
@@ -150,7 +149,7 @@ function scrollTriggerRefresh(time = 1000) {
   const scrollTriggerRefreshTarget = document.querySelectorAll('.scrolltrigger-refresh-target');
   window.addEventListener('load', () => {
     setTimeout(() => {
-      console.log(`✨ ScrollTrigger refresh created after ${time}ms ✨`);
+      // console.log(`✨ ScrollTrigger refresh created after ${time}ms ✨`);
       scrollTriggerRefreshTarget.forEach((triggerElem) => {
         ScrollTrigger.create({
           trigger: triggerElem,
@@ -160,7 +159,7 @@ function scrollTriggerRefresh(time = 1000) {
           // markers: true,
           onEnter: () => {
             ScrollTrigger.refresh();
-            console.log('⚡ ScrollTrigger Refresh Triggered ⚡');
+            // console.log('⚡ ScrollTrigger Refresh Triggered ⚡');
           },
         });
       });

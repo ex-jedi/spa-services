@@ -2,7 +2,6 @@
 // ** Imports  **
 // *==============================================================================
 
-// TODO: Minify
 import * as Flickity from 'flickity';
 import 'flickity-imagesloaded';
 
