@@ -6,4 +6,3 @@ node_modules
 #Perch Files
 perch/resources/
 perch/config/config.php
-#Uncomment below for public repos
