@@ -6,7 +6,6 @@
 //** Media Queries   **
 //*=========================================
 
-
 //********** Max Width **********
 
 @mixin breakpoint($point) {
@@ -90,7 +89,6 @@ $paragraph-spacing-small: 1.25rem;
 //** Colours  **
 //*=========================================
 
-
 // Main brand Colours
 $background-colour-light: #eef7f3;
 $background-colour-dark: #144884;
@@ -104,7 +102,6 @@ $font-colour-dark: #144884;
 
 // Link Colours
 $link-colour: #3c3cf6;
-$link-visited: #8608fb;
 
 //*=========================================
 //** Effects and Animation  **
