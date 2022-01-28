@@ -127,6 +127,6 @@ label[for='postAllowComments'] ~ .form-entry {
 }
 
 /* Hiding help button */
-.utilnav a[href="/perch/core/help/"] {
+.utilnav a[href='/perch/core/help/'] {
   display: none;
 }
