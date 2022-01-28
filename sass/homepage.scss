@@ -183,6 +183,7 @@
 .services-find-out-more-paragraph {
   width: 50%;
   padding-bottom: $section-spacing-large;
+  color: $font-colour-dark;
 
   @include breakpoint(1300) {
     width: 75%;
@@ -317,6 +318,11 @@
   background-color: $background-colour-three;
   color: $font-colour-light;
   padding-inline: $section-spacing-super-large;
+
+  a {
+    text-decoration: underline;
+    color: inherit;
+  }
 
   @include breakpoint(1600) {
     padding-inline: $section-spacing-extra-large;
