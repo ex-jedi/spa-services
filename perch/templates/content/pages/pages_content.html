@@ -8,7 +8,7 @@
         <div class="block-textwrapper main-body-font simple-fade-right">
           <perch:content id="blockText" type="textarea" editor="redactor" label="Block Text" required html>
         </div>
-        <img class="pages-block-image simple-fade-up" itemprop="image" loading="lazy" src="<perch:content id="blockImage" type="image" width="2000" height="2000" label="Block Image" crop>" alt="<perch:content id="altOne" type="text" label="Image Description">"
+        <img class="pages-block-image simple-fade-up" itemprop="image" loading="lazy" src="<perch:content id="blockImage" type="image" width="2000" height="2000" label="Block Image" help="Image must be at least 2000px wide" crop>" alt="<perch:content id="altOne" type="text" label="Image Description" help="Short description of image for SEO and screen readers">"
         sizes="(max-width: 1000px) 100vw, 60vw"
         srcset="<perch:content type="image" id="blockImage" width="2000" height="2000" crop> 2000w,
         <perch:content type="image" id="blockImage" width="1200" height="1200" crop> 1200w,
