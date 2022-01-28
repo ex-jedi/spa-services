@@ -10,8 +10,8 @@
 			<p class="footer-terms">
 				<a href="/terms.php">Terms of use</a>
 			</p>
-			<p class="footer-copyright">
-				&copy; <?php echo date("Y"); ?> Spa Service
+			<p class="footer-copyright" >
+				&copy; <?php echo date("Y"); ?> <span itemprop="name">Spa Service</span>
 			</p>
 		</div>
 		<div class="footer-credit-wrapper">
