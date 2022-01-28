@@ -155,6 +155,11 @@ h3 {
 .block-textwrapper {
   margin-bottom: $section-spacing-small;
 
+  a {
+    text-decoration: underline;
+    color: inherit;
+  }
+
   @include breakpoint(1100) {
     margin-bottom: $section-spacing-smaller;
   }
