@@ -16,7 +16,11 @@
   padding: $header-spacing-large $header-spacing-large 0;
   margin-left: 100px;
   width: calc(100% - 100px);
-  @include breakpoint(1600) {
+  color: $font-colour-dark;
+
+  a {
+    text-decoration: underline;
+    color: inherit;
   }
 
   @include breakpoint(1100) {
