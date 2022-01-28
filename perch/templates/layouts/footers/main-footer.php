@@ -1,4 +1,4 @@
-<footer class="main-footer">
+<footer class="main-footer" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
 		<?php perch_content("Footer Opening Hours"); ?>
 		<?php perch_content("Footer Address"); ?>
 		<?php perch_content("Footer Contact Details"); ?>
